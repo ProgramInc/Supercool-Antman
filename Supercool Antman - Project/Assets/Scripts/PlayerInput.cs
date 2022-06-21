@@ -6,22 +6,12 @@ public class PlayerInput : MonoBehaviour
 {
     public bool isWalking;
     public bool isGrounded;
+
     [SerializeField] Transform groundRayCaster;
-    [SerializeField] Transform knees;
-    [SerializeField] Transform centerMass;
     [SerializeField] float speed = 6f;
-    private bool isWalled;
-    [SerializeField]private int flipSign;
+    [SerializeField] bool isWalled;
+    [SerializeField] int flipSign;
 
-    Quaternion upRight;
-    Quaternion downRight;
-
-    private void Start()
-    {
-        upRight = Quaternion.Euler(0, 0, 0);
-        downRight = Quaternion.Euler(180, 0, 0);
-        flipSign = 1;
-    }
 
     void Update()
     {
@@ -64,14 +54,14 @@ public class PlayerInput : MonoBehaviour
 
     private void GroundCheck()
     {
-        RaycastHit2D[] hit = Physics2D.RaycastAll(knees.transform.position, -transform.up * 2, 1.5f);
-        Debug.DrawRay(knees.transform.position, -transform.up * 2, Color.red);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(groundRayCaster.transform.position, -transform.up * 2, 1.5f);
+        Debug.DrawRay(groundRayCaster.transform.position, -transform.up * 2, Color.red);
         foreach (RaycastHit2D raycastHit in hit)
         {
             if (raycastHit.collider.CompareTag("FloorOrCeiling"))
             {
                 isGrounded = true;
-                
+
             }
             else
             {
@@ -95,35 +85,34 @@ public class PlayerInput : MonoBehaviour
         {
             if (isGrounded)
             {
-                if (transform.rotation == upRight)
+                if (transform.rotation == Quaternion.Euler(0, 0, 0))
                 {
-                    transform.rotation = downRight;
+                    transform.rotation = Quaternion.Euler(0, 0, -180);
                 }
                 else
                 {
-                    transform.rotation = upRight;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
-                Physics2D.gravity = -Physics2D.gravity; 
             }
             else if (isWalled)
             {
-                if (transform.rotation == upRight)
+                if (transform.rotation == Quaternion.Euler(0, 0, 90))
                 {
-                    transform.rotation = downRight;
+                    transform.rotation = Quaternion.Euler(0, 0, -90);
                 }
                 else
                 {
-                    transform.rotation = upRight;
+                    transform.rotation = Quaternion.Euler(0, 0, 90);
                 }
-                Physics2D.gravity = -Physics2D.gravity;
             }
+            Physics2D.gravity = -Physics2D.gravity;
         }
     }
 
     private IEnumerator SlideToTarget(Vector2 target)
     {
         print("coroutine started");
-        while(true)
+        while (true)
         {
             print("coroutine happening");
             transform.position += -transform.up * Time.deltaTime;
