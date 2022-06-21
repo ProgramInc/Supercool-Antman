@@ -9,8 +9,8 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
-        playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
+        playerInput = GetComponentInParent<PlayerInput>();
     }
     void Update()
     {
