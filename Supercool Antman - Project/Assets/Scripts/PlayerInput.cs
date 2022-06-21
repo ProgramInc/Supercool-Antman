@@ -12,12 +12,19 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] bool isWalled;
     [SerializeField] int flipSign;
 
+    public Vector3 currentRotation;
 
+    Camera cam;
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
     void Update()
     {
         GroundCheck();
         IsThePlayerWalking();
         Flip();
+        OrientPlayer();
     }
 
     private void IsThePlayerWalking()
@@ -83,7 +90,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGrounded)
+            /*if (isGrounded)
             {
                 if (transform.rotation == Quaternion.Euler(0, 0, 0))
                 {
@@ -92,6 +99,7 @@ public class PlayerInput : MonoBehaviour
                 else
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
+                    Physics2D.gravity = -Physics2D.gravity;
                 }
             }
             else if (isWalled)
@@ -103,20 +111,40 @@ public class PlayerInput : MonoBehaviour
                 else
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 90);
+                    Physics2D.gravity = -Physics2D.gravity;
                 }
-            }
+            }*/
             Physics2D.gravity = -Physics2D.gravity;
+
         }
     }
 
-    private IEnumerator SlideToTarget(Vector2 target)
+
+
+    void OrientPlayer()
     {
-        print("coroutine started");
-        while (true)
+        Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (isGrounded)
         {
-            print("coroutine happening");
-            transform.position += -transform.up * Time.deltaTime;
-            yield return null;
+            if (transform.position.x > mousePosition.x)
+            {
+                transform.rotation = currentRotation.z == 0? Quaternion.Euler(0, 180, currentRotation.z):Quaternion.Euler(0,0,currentRotation.z);
+            }
+            else
+            {
+                transform.rotation = currentRotation.z == 0 ? Quaternion.Euler(0, 0, currentRotation.z):Quaternion.Euler(0, 180, currentRotation.z);
+            }
+        }
+        else if (isWalled)
+        {
+            if (transform.position.y > mousePosition.y)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, -currentRotation.z);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
+            }
         }
     }
 }
