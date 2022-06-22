@@ -14,7 +14,7 @@ public class WallScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collided");
+        /*print("collided");*/
         if (collision.collider.CompareTag("Player"))
         {
             collision.collider.GetComponentInParent<Rigidbody2D>().transform.rotation = Quaternion.Euler(rotationAfterCollision);

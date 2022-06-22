@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - FloorOrCeiling
+  - Sword
+  - Lazer
   layers:
   - Default
   - TransparentFX
