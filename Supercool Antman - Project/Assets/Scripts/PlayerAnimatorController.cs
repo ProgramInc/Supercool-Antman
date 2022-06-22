@@ -15,5 +15,10 @@ public class PlayerAnimatorController : MonoBehaviour
     void Update()
     {
         animator.SetBool("IsWalking", playerInput.isWalking);
+        if (playerInput.IsAttacking)
+        {
+            animator.SetTrigger("IsAttacking");
+            playerInput.IsAttacking = false;
+        }
     }
 }
