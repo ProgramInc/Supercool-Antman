@@ -7,8 +7,7 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     PlayerInput playerInput;
     Animator animator;
-    /*[SerializeField] Transform aimIKTarget;*/
-    /*[SerializeField] Transform headBone;*/
+    
     [SerializeField] CCDSolver2D headSolver;
     [SerializeField] Solver2D leftArmSolver;
     [SerializeField] Transform leftShoulder;
