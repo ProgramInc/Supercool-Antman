@@ -453,9 +453,9 @@ ScriptedImporter:
     spriteBone:
     - name: Left Lower Leg
       guid: 8044ca597dc1d2d458fd79cddcedd720
-      position: {x: 152.86429, y: -0.00005534428, z: 0}
-      rotation: {x: 0, y: 0, z: 0.3092993, w: 0.9509648}
-      length: 144.48524
+      position: {x: 152.86426, y: -0.000032913915, z: 0}
+      rotation: {x: 0, y: 0, z: 0.30929926, w: 0.95096475}
+      length: 144.4852
       parentId: 1
       color:
         serializedVersion: 2
@@ -464,7 +464,7 @@ ScriptedImporter:
       guid: 5009058f780071547ab6417248914c88
       position: {x: 182.18152, y: 243.09082, z: 0}
       rotation: {x: 0, y: 0, z: 0.9510158, w: -0.30914247}
-      length: 152.86426
+      length: 152.86421
       parentId: -1
       color:
         serializedVersion: 2
@@ -811,9 +811,9 @@ ScriptedImporter:
     spriteBone:
     - name: Right Lower Arm
       guid: 323dfc9c32d117a40a0f2ea957696c7f
-      position: {x: 130.05191, y: 0.0000031386298, z: 0}
-      rotation: {x: 0, y: 0, z: -0.4072691, w: 0.91330826}
-      length: 115.42918
+      position: {x: 130.052, y: 0.0002113674, z: 0}
+      rotation: {x: 0, y: 0, z: -0.40726897, w: 0.9133083}
+      length: 115.4292
       parentId: 1
       color:
         serializedVersion: 2
@@ -821,8 +821,8 @@ ScriptedImporter:
     - name: Right Upper Arm
       guid: 281b8cf35351cc649a41ae13049833b1
       position: {x: 1.9124756, y: 222.56702, z: 0}
-      rotation: {x: 0, y: 0, z: -0.461619, w: 0.88707834}
-      length: 130.05191
+      rotation: {x: 0, y: 0, z: -0.46161905, w: 0.88707834}
+      length: 130.05193
       parentId: -1
       color:
         serializedVersion: 2
@@ -1147,7 +1147,7 @@ ScriptedImporter:
     spriteBone:
     - name: Left Lower Arm
       guid: ae06639b651d8344dbf0671260786c36
-      position: {x: 136.25072, y: -0.00003252581, z: 0}
+      position: {x: 136.25069, y: -0.000028474875, z: 0}
       rotation: {x: 0, y: 0, z: 0.4062686, w: 0.9137537}
       length: 106.935
       parentId: 1
@@ -1158,7 +1158,7 @@ ScriptedImporter:
       guid: 7d35132f4e6c4dc4aab84ca88449eaf3
       position: {x: 199.36963, y: 112.37689, z: 0}
       rotation: {x: 0, y: 0, z: 0.9977853, w: -0.06651787}
-      length: 136.2508
+      length: 136.25076
       parentId: -1
       color:
         serializedVersion: 2
@@ -1495,8 +1495,8 @@ ScriptedImporter:
     - name: Head
       guid: bc61630d1d44be64ea41494ecdfe1ded
       position: {x: -62.61908, y: -62.962524, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7054819, w: 0.708728}
-      length: 172.33806
+      rotation: {x: 0, y: 0, z: 0.3664458, w: 0.9304395}
+      length: 144.57933
       parentId: -1
       color:
         serializedVersion: 2
@@ -1811,8 +1811,8 @@ ScriptedImporter:
     - name: Head
       guid: bc61630d1d44be64ea41494ecdfe1ded
       position: {x: 55.38092, y: -30.962524, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7054819, w: 0.708728}
-      length: 172.33806
+      rotation: {x: 0, y: 0, z: 0.3664458, w: 0.9304395}
+      length: 144.57933
       parentId: -1
       color:
         serializedVersion: 2
@@ -2487,89 +2487,89 @@ ScriptedImporter:
     - name: Head
       guid: bc61630d1d44be64ea41494ecdfe1ded
       position: {x: 333.38092, y: 65.037476, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7054819, w: 0.708728}
-      length: 172.33806
+      rotation: {x: 0, y: 0, z: 0.3664458, w: 0.9304395}
+      length: 144.57933
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: Top Tentacle Base
       guid: bd1e5d8cd09cb7e4aa262c5e03c8c976
-      position: {x: 180.62169, y: 77.740814, z: 0}
-      rotation: {x: 0, y: 0, z: 0.53478074, w: 0.84499097}
-      length: 81.932236
+      position: {x: 67.15529, y: 184.81894, z: 0}
+      rotation: {x: 0, y: 0, z: 0.82610744, w: 0.56351274}
+      length: 81.93226
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: Tentacle2
       guid: d5e79528178a23b4cbafd5696839ea70
-      position: {x: 81.93222, y: -0.000019947696, z: 0}
-      rotation: {x: 0, y: 0, z: -0.026325835, w: 0.9996534}
-      length: 61.385986
+      position: {x: 81.93224, y: 0.00002046847, z: 0}
+      rotation: {x: 0, y: 0, z: -0.026325246, w: 0.99965346}
+      length: 61.385994
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: Tentacle3
       guid: c6fd98fe817dff745ae43ad0223eaad9
-      position: {x: 61.386005, y: -0.0000054574757, z: 0}
-      rotation: {x: 0, y: 0, z: -0.05650501, w: 0.99840236}
-      length: 50.67445
+      position: {x: 61.38599, y: -0.00003157371, z: 0}
+      rotation: {x: 0, y: 0, z: -0.056505013, w: 0.9984023}
+      length: 50.674427
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: Tentacle4
       guid: edfb7e9a4b99b5c4faec1fbcf2de9ae2
-      position: {x: 50.674446, y: -0.0000054190095, z: 0}
-      rotation: {x: 0, y: 0, z: -0.047787152, w: 0.9988576}
-      length: 33.502525
+      position: {x: 50.674408, y: -0.000035534358, z: 0}
+      rotation: {x: 0, y: 0, z: -0.047787704, w: 0.9988575}
+      length: 33.502533
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: Bottom Tentacle Base
       guid: 7a821774bb3b02143bb90b8adcb27306
-      position: {x: 140.78787, y: 105.973595, z: 0}
-      rotation: {x: 0, y: 0, z: 0.4683182, w: 0.8835599}
-      length: 77.05782
+      position: {x: 19.296806, y: 175.15489, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7803988, w: 0.6252822}
+      length: 77.05779
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Tentacle2
       guid: 0349256503e50704f928e5cce24c9bf6
-      position: {x: 77.05777, y: 0.000016411019, z: 0}
-      rotation: {x: 0, y: 0, z: 0.031679984, w: 0.9994981}
-      length: 68.0145
+      position: {x: 77.05783, y: -0.0000890628, z: 0}
+      rotation: {x: 0, y: 0, z: 0.031680025, w: 0.9994981}
+      length: 68.01452
       parentId: 5
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Tentacle3
       guid: 57ebd6e38ea1ff544bf3296a41cdbbc1
-      position: {x: 68.014496, y: -0.00003041916, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0050860425, w: 0.9999871}
-      length: 55.469547
+      position: {x: 68.014565, y: -0.00003115797, z: 0}
+      rotation: {x: 0, y: 0, z: -0.005086092, w: 0.9999871}
+      length: 55.469532
       parentId: 6
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Tentacle4
       guid: e357f8df5ef2bb54fb9235c72a8ad634
-      position: {x: 55.469524, y: 0.00020616407, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09539982, w: 0.9954391}
-      length: 42.103207
+      position: {x: 55.46956, y: 0.00015976351, z: 0}
+      rotation: {x: 0, y: 0, z: -0.095399685, w: 0.99543905}
+      length: 42.103153
       parentId: 7
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: Tentacle5
       guid: 2a55df6482f4aad4c80e65d2ab6379a6
-      position: {x: 42.103165, y: 0.000025205194, z: 0}
-      rotation: {x: 0, y: 0, z: -0.042092565, w: 0.99911374}
-      length: 27.44131
+      position: {x: 42.10319, y: -0.0000098763085, z: 0}
+      rotation: {x: 0, y: 0, z: -0.042092968, w: 0.99911374}
+      length: 27.441315
       parentId: 8
       color:
         serializedVersion: 2
@@ -3025,52 +3025,52 @@ ScriptedImporter:
     - name: Head
       guid: bc61630d1d44be64ea41494ecdfe1ded
       position: {x: 289.6872, y: 0.18292558, z: 0}
-      rotation: {x: 0, y: 0, z: 0.20229457, w: 0.97932476}
-      length: 172.33807
+      rotation: {x: 0, y: 0, z: -0.20279978, w: 0.9792203}
+      length: 144.57933
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: Bottom Tentacle Base
       guid: 7a821774bb3b02143bb90b8adcb27306
-      position: {x: 140.78787, y: 105.97362, z: 0}
-      rotation: {x: 0, y: 0, z: 0.46831816, w: 0.88355994}
-      length: 77.05784
+      position: {x: 19.296825, y: 175.1549, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7803988, w: 0.6252822}
+      length: 77.05779
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Tentacle2
       guid: 0349256503e50704f928e5cce24c9bf6
-      position: {x: 77.0578, y: 0.000018451028, z: 0}
+      position: {x: 77.057846, y: -0.000070438, z: 0}
       rotation: {x: 0, y: 0, z: 0.03168001, w: 0.99949807}
-      length: 68.01451
+      length: 68.01452
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Tentacle3
       guid: 57ebd6e38ea1ff544bf3296a41cdbbc1
-      position: {x: 68.0145, y: -0.00000856121, z: 0}
+      position: {x: 68.01455, y: -0.000040874933, z: 0}
       rotation: {x: 0, y: 0, z: -0.0050861, w: 0.99998707}
-      length: 55.46956
+      length: 55.469532
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Tentacle4
       guid: e357f8df5ef2bb54fb9235c72a8ad634
-      position: {x: 55.469513, y: 0.0002356244, z: 0}
-      rotation: {x: 0, y: 0, z: -0.095399804, w: 0.99543905}
-      length: 42.10321
+      position: {x: 55.469513, y: 0.00021386502, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09539965, w: 0.99543905}
+      length: 42.10315
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: Tentacle5
       guid: 2a55df6482f4aad4c80e65d2ab6379a6
-      position: {x: 42.103153, y: 0.000040490668, z: 0}
-      rotation: {x: 0, y: 0, z: -0.042092536, w: 0.9991138}
+      position: {x: 42.1032, y: 0.0000005318252, z: 0}
+      rotation: {x: 0, y: 0, z: -0.042093016, w: 0.99911374}
       length: 27.44131
       parentId: 5
       color:
@@ -3078,8 +3078,8 @@ ScriptedImporter:
         rgba: 4278223103
     - name: Top Tentacle Base
       guid: bd1e5d8cd09cb7e4aa262c5e03c8c976
-      position: {x: 180.6217, y: 77.74083, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5347807, w: 0.8449909}
+      position: {x: 67.155304, y: 184.81895, z: 0}
+      rotation: {x: 0, y: 0, z: 0.82610744, w: 0.56351274}
       length: 81.93226
       parentId: 1
       color:
@@ -3088,25 +3088,25 @@ ScriptedImporter:
     - name: Tentacle2
       guid: d5e79528178a23b4cbafd5696839ea70
       position: {x: 81.93223, y: -0.0000027752903, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0263259, w: 0.9996534}
-      length: 61.385998
+      rotation: {x: 0, y: 0, z: -0.026325338, w: 0.99965346}
+      length: 61.385994
       parentId: 7
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: Tentacle3
       guid: c6fd98fe817dff745ae43ad0223eaad9
-      position: {x: 61.386, y: 0.000016260246, z: 0}
+      position: {x: 61.385994, y: -0.0000039224924, z: 0}
       rotation: {x: 0, y: 0, z: -0.056504983, w: 0.99840236}
-      length: 50.674458
+      length: 50.674423
       parentId: 8
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: Tentacle4
       guid: edfb7e9a4b99b5c4faec1fbcf2de9ae2
-      position: {x: 50.67443, y: 0.000038331855, z: 0}
-      rotation: {x: 0, y: 0, z: -0.04778716, w: 0.99885756}
+      position: {x: 50.674427, y: -0.000026722402, z: 0}
+      rotation: {x: 0, y: 0, z: -0.047787677, w: 0.99885756}
       length: 33.502533
       parentId: 9
       color:
@@ -3116,14 +3116,14 @@ ScriptedImporter:
       guid: 7d35132f4e6c4dc4aab84ca88449eaf3
       position: {x: 211.7101, y: 114.53812, z: 0}
       rotation: {x: 0, y: -0, z: 0.8713568, w: 0.4906499}
-      length: 136.25082
+      length: 136.2508
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: Left Lower Arm
       guid: ae06639b651d8344dbf0671260786c36
-      position: {x: 136.2508, y: -0.000012836687, z: 0}
+      position: {x: 136.25076, y: -0.000008785752, z: 0}
       rotation: {x: 0, y: 0, z: 0.40626863, w: 0.9137537}
       length: 106.93501
       parentId: 11
@@ -3133,16 +3133,16 @@ ScriptedImporter:
     - name: Right Upper Arm
       guid: 281b8cf35351cc649a41ae13049833b1
       position: {x: 208.27257, y: -141.83305, z: 0}
-      rotation: {x: 0, y: -0, z: -0.8719748, w: 0.48955074}
-      length: 130.05191
+      rotation: {x: 0, y: -0, z: -0.8719749, w: 0.48955074}
+      length: 130.0519
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Right Lower Arm
       guid: 323dfc9c32d117a40a0f2ea957696c7f
-      position: {x: 130.05193, y: 0.000036266516, z: 0}
-      rotation: {x: 0, y: 0, z: -0.40726906, w: 0.91330826}
+      position: {x: 130.05191, y: 0.00007719347, z: 0}
+      rotation: {x: 0, y: 0, z: -0.40726903, w: 0.91330826}
       length: 115.42918
       parentId: 13
       color:
@@ -3152,15 +3152,15 @@ ScriptedImporter:
       guid: 5009058f780071547ab6417248914c88
       position: {x: -12.54978, y: 27.654816, z: 0}
       rotation: {x: 0, y: -0, z: 0.9650634, w: 0.26201668}
-      length: 152.86423
+      length: 152.8642
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Left Lower Leg
       guid: 8044ca597dc1d2d458fd79cddcedd720
-      position: {x: 152.86421, y: -0.000020236552, z: 0}
-      rotation: {x: 0, y: 0, z: 0.3092993, w: 0.9509648}
+      position: {x: 152.86418, y: -0.000014634508, z: 0}
+      rotation: {x: 0, y: 0, z: 0.30929926, w: 0.95096475}
       length: 144.48521
       parentId: 15
       color:

@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float speed = 6f;
     [SerializeField] int flipSign;
 
+    public Vector2 mousePosition { get; private set; }
+
     public Vector3 currentRotation;
     Camera cam;
 
@@ -106,7 +108,10 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Physics2D.gravity = -Physics2D.gravity;
+            if (isGrounded || isWalled)
+            {
+                Physics2D.gravity = -Physics2D.gravity; 
+            }
 
 
             /*if (isGrounded)
@@ -140,7 +145,7 @@ public class PlayerInput : MonoBehaviour
 
     void OrientPlayer()
     {
-        Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         if (isGrounded)
         {
             if (transform.position.x > mousePosition.x)

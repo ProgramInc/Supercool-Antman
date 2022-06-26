@@ -29,10 +29,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   /* private void FindTarget()
-    {
-        nextTarget = 
-    }*/
+    /* private void FindTarget()
+     {
+         nextTarget = 
+     }*/
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,10 +40,24 @@ public class Enemy : MonoBehaviour
         {
             print(other.tag);
             health -= other.GetComponent<Weapon>().Damage;
-            if (health<=0)
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }
         }
     }
+
+    /*private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
+        {
+            print(other.gameObject.tag);
+            health -= other.gameObject.GetComponent<Weapon>().Damage;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }*/
+
 }
