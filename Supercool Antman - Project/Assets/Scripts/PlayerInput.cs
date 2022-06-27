@@ -12,7 +12,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] Transform groundRayCaster;
     [SerializeField] float speed = 6f;
     [SerializeField] int flipSign;
-
+    [SerializeField] GameObject sword;
+    [SerializeField] GameObject lightSaber;
     public Vector2 mousePosition { get; private set; }
 
     public Vector3 currentRotation;
@@ -31,6 +32,18 @@ public class PlayerInput : MonoBehaviour
         Flip();
         OrientPlayer();
         CheckForAttacks();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            sword.SetActive(true);
+            lightSaber.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            sword.SetActive(false);
+            lightSaber.SetActive(true);
+        }
     }
 
     private void CheckForAttacks()
