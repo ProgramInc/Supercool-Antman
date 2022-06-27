@@ -50,6 +50,5 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             leftHand.target = reticle;
         }
-            leftArmSolver.UpdateIK(1f);
     }
 }
