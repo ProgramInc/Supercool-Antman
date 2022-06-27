@@ -2089,6 +2089,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14012098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14012098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
     - target: {fileID: 8432666859011105295, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
       propertyPath: m_Name
       value: Reticle
