@@ -9,30 +9,24 @@ public class Enemy : MonoBehaviour
     Vector3 nextTarget;
     bool hasTarget;
     [SerializeField] float speed;
+    [SerializeField] Animator anim;
     int health;
-    // Start is called before the first frame update
+
+
+    EnemyStates currentState;
     void Start()
     {
         health = 100;
+        currentState = EnemyStates.KeepDistanceFromPlayer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hasTarget)
-        {
-            Vector2.MoveTowards(transform.position, nextTarget, speed);
-        }
-        else
-        {
-            /*FindTarget();*/
-        }
+        
     }
 
-    /* private void FindTarget()
-     {
-         nextTarget = 
-     }*/
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,6 +39,11 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    void AttackPlayer()
+    {
+        anim.SetTrigger("Attack");
     }
 
     /*private void OnCollisionEnter2D(Collision2D other)
@@ -60,4 +59,11 @@ public class Enemy : MonoBehaviour
         }
     }*/
 
+}
+
+enum EnemyStates
+{
+    KeepDistanceFromPlayer,
+    Attack,
+    Death
 }
