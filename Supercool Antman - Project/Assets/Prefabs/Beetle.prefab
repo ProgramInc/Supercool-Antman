@@ -824,6 +824,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &601135499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461389977373772192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.01
+  anim: {fileID: 1998701486}
+  minDistanceFromPlayer: 0.5
+  maxDistanceFromPlayer: 3
+  damage: 5
+  pickupDropChance: 5
 --- !u!114 &1998701485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,23 +868,6 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
---- !u!114 &601135499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461389977373772192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 0.01
-  anim: {fileID: 1998701486}
-  minDistanceFromPlayer: 0.5
-  maxDistanceFromPlayer: 3
-  damage: 0
 --- !u!4 &1725684956179811727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 311580695235782034, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}

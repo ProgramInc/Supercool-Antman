@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: ab561cda4b035714096f57c2b7f4f929, type: 3}
       propertyPath: m_Name
-      value: Mantis-NoBackup-Small-WithStroke-Final
+      value: Mantis-NoBackup-Small-WithStroke-Final Variant
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: ab561cda4b035714096f57c2b7f4f929, type: 3}
       propertyPath: m_RootOrder
@@ -108,4 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  movementSpeed: 0
+  anim: {fileID: 0}
+  minDistanceFromPlayer: 3
+  maxDistanceFromPlayer: 5
+  damage: 10
+  pickupDropChance: 10
