@@ -820,8 +820,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  anim: {fileID: 0}
+  movementSpeed: 0.01
+  anim: {fileID: 601135501}
+  minDistanceFromPlayer: 0.5
+  maxDistanceFromPlayer: 3
+--- !u!95 &601135501 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1998701486, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
+  m_PrefabInstance: {fileID: 1998701473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615988974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1039474286
 MonoBehaviour:
   m_ObjectHideFlags: 0
