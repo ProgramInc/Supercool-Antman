@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     GameObject player;
     EnemyStates currentState;
     [SerializeField] int damage;
+    [SerializeField] int pickupDropChance;
     void Start()
     {
         health = 100;
@@ -53,7 +54,7 @@ public class Enemy : MonoBehaviour
                 currentState = EnemyStates.KeepDistanceFromPlayer;
                 break;
             case EnemyStates.Death:
-                Destroy(gameObject);
+                EnemyDeath();
                 break;
             default:
                 break;
@@ -75,11 +76,7 @@ public class Enemy : MonoBehaviour
         {
             print(other.tag);
             health -= other.GetComponent<Weapon>().Damage;
-            if (health <= 0)
-            {
-                PickupManager.OnDropPickup(transform.position);
-                Destroy(gameObject);
-            }
+            CheckDeath();
         }
         else if (other.gameObject.GetComponent<PlayerStats>())
         {
@@ -92,24 +89,27 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Attack");
     }
 
-    /*private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
         {
             print(other.gameObject.tag);
             health -= other.gameObject.GetComponent<Weapon>().Damage;
-            if (health <= 0)
-            {
-                PickupManager.OnDropPickup(transform.position);
-                Destroy(gameObject);
-            }
+            CheckDeath();
         }
         else if (other.gameObject.GetComponent<PlayerStats>())
         {
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
         }
-    }*/
-
+    }
+    void EnemyDeath()
+    {
+        if (UnityEngine.Random.Range(0,100) < pickupDropChance)
+        {
+            PickupManager.OnDropPickup(transform.position);
+            Destroy(gameObject); 
+        }
+    }
 }
 
 enum EnemyStates
