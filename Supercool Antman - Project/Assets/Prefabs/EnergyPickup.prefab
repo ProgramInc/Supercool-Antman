@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166458912298414711, guid: 243ba4a9a1109414eb91c28b87aab21a, type: 3}
+      propertyPath: pickupType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168743025977858020, guid: 243ba4a9a1109414eb91c28b87aab21a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168743025977858026, guid: 243ba4a9a1109414eb91c28b87aab21a, type: 3}
       propertyPath: m_Name
-      value: HealthPickup
+      value: EnergyPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 243ba4a9a1109414eb91c28b87aab21a, type: 3}
