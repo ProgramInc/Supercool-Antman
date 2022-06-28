@@ -12,5 +12,6 @@ public class EnemyWeapon : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
         }
+        Destroy(gameObject);
     }
 }

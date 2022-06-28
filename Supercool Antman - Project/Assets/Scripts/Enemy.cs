@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
                 if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed);
-                    print("too far");
                 }
                 else if (Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
                 {
@@ -50,7 +49,7 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyStates.Attack:
                 AttackPlayer();
-                print("attacking");
+                /*print("attacking");*/
                 currentState = EnemyStates.KeepDistanceFromPlayer;
                 break;
             case EnemyStates.Death:
@@ -78,24 +77,7 @@ public class Enemy : MonoBehaviour
             health -= other.GetComponent<Weapon>().Damage;
             if (health <= 0)
             {
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    void AttackPlayer()
-    {
-        anim.SetTrigger("Attack");
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
-        {
-            print(other.gameObject.tag);
-            health -= other.gameObject.GetComponent<Weapon>().Damage;
-            if (health <= 0)
-            {
+                PickupManager.OnDropPickup(transform.position);
                 Destroy(gameObject);
             }
         }
@@ -104,6 +86,29 @@ public class Enemy : MonoBehaviour
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
         }
     }
+
+    void AttackPlayer()
+    {
+        anim.SetTrigger("Attack");
+    }
+
+    /*private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
+        {
+            print(other.gameObject.tag);
+            health -= other.gameObject.GetComponent<Weapon>().Damage;
+            if (health <= 0)
+            {
+                PickupManager.OnDropPickup(transform.position);
+                Destroy(gameObject);
+            }
+        }
+        else if (other.gameObject.GetComponent<PlayerStats>())
+        {
+            other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
+        }
+    }*/
 
 }
 
