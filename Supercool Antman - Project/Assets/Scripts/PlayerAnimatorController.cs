@@ -39,7 +39,7 @@ public class PlayerAnimatorController : MonoBehaviour
         head.target.position = playerInput.mousePosition;
 
         Vector3 ikTargetOffset = (leftShoulder.position - (Vector3)playerInput.mousePosition).normalized * swordDistanceFromBody;
-        IKChain2D leftHand = leftArmSolver.GetChain(1);
+        IKChain2D leftHand = leftArmSolver.GetChain(0);
         
         if (!animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
