@@ -13,12 +13,15 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     public float currentEnergy;
 
+    public PlayerWeaponTypes currentWeapon;
+
     private void Start()
     {
         currentHealth = maxHealth;
         currentEnergy = 0;
         UpdateHealth();
         UpdateEnergy();
+        currentWeapon = PlayerWeaponTypes.Sword;
     }
 
     private void Update()
@@ -77,4 +80,10 @@ public class PlayerStats : MonoBehaviour
     {
         energyImage.fillAmount = currentEnergy / maxEnergy;
     }
+}
+
+public enum PlayerWeaponTypes
+{
+    Sword,
+    Lightsaber
 }
