@@ -17,6 +17,12 @@ public class Enemy : MonoBehaviour
     EnemyStates currentState;
     [SerializeField] int damage;
     [SerializeField] int pickupDropChance;
+    Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         health = 100;
@@ -27,6 +33,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0));
 
         switch (currentState)
         {
@@ -36,12 +43,11 @@ public class Enemy : MonoBehaviour
 
                 if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed);
+                    rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed));
                 }
                 else if (Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
                 {
-                    Vector2 fleeDestination = (transform.position - player.transform.position).normalized;
-                    transform.position = Vector2.MoveTowards(transform.position, fleeDestination, movementSpeed / 2);
+                    moveAwayFromPlayer();
                 }
                 else
                 {
@@ -61,6 +67,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void moveAwayFromPlayer()
+    {
+        Vector2 fleeDestination = (transform.position - player.transform.position).normalized;
+        rb.MovePosition(Vector2.MoveTowards(transform.position, fleeDestination, movementSpeed / 2));
+    }
+
     private void CheckDeath()
     {
         if (health <= 0)
@@ -74,7 +86,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Sword") || other.CompareTag("Lazer"))
         {
-            print(other.tag);
+            /*print(other.tag);*/
             health -= other.GetComponent<Weapon>().Damage;
             CheckDeath();
         }
@@ -86,10 +98,12 @@ public class Enemy : MonoBehaviour
 
     void AttackPlayer()
     {
+        minDistanceFromPlayer = 0;
+        rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * 8));
         anim.SetTrigger("Attack");
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+   /* private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
         {
@@ -101,13 +115,13 @@ public class Enemy : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
         }
-    }
+    }*/
     void EnemyDeath()
     {
-        if (UnityEngine.Random.Range(0,100) < pickupDropChance)
+        if (UnityEngine.Random.Range(0, 100) < pickupDropChance)
         {
             PickupManager.OnDropPickup(transform.position);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }
