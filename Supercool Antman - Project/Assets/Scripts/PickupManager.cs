@@ -21,6 +21,6 @@ public class PickupManager : MonoBehaviour
     void DropPickup(Vector2 positionToInstantiate)
     {
         Instantiate(pickupPrefabs[Random.Range(0,pickupPrefabs.Length)], positionToInstantiate, Quaternion.identity);
-        print(positionToInstantiate + " pickup instantiated");
+        /*print(positionToInstantiate + " pickup instantiated");*/
     }
 }
