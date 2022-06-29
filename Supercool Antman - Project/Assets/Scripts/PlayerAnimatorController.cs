@@ -7,7 +7,8 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     PlayerInput playerInput;
     Animator animator;
-    
+    PlayerStats playerStats;
+    [SerializeField] GameObject lazerPrefab;
     [SerializeField] CCDSolver2D headSolver;
     [SerializeField] Solver2D leftArmSolver;
     [SerializeField] Transform leftShoulder;
@@ -15,11 +16,14 @@ public class PlayerAnimatorController : MonoBehaviour
     [Range(0.4f, 1)]
     [SerializeField] float swordDistanceFromBody;
     [SerializeField] Transform reticle;
-
+    [SerializeField]Transform topLazerPoint;
+    [SerializeField] Transform bottomLazerPoint;
+    [SerializeField] float lazerSpeed;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         playerInput = GetComponentInParent<PlayerInput>();
+        playerStats = GetComponent<PlayerStats>();
     }
     void Update()
     {
@@ -28,7 +32,25 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             animator.SetTrigger("IsAttacking");
             playerInput.IsAttacking = false;
+            if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+            {
+                playerStats.ChangeEnergy(-5);
+            }
 
+            if (playerStats.currentEnergy <= 0)
+            {
+                print(playerStats.currentEnergy);
+                playerInput.ForceDrawSword();
+            }
+        }
+
+        if (playerInput.isShooting)
+        {
+            if (playerStats.currentEnergy > 0)
+            {
+                playerStats.ChangeEnergy(-10);
+                animator.SetTrigger("IsShooting");
+            }
         }
     }
 
@@ -40,7 +62,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
         Vector3 ikTargetOffset = (leftShoulder.position - (Vector3)playerInput.mousePosition).normalized * swordDistanceFromBody;
         IKChain2D leftHand = leftArmSolver.GetChain(0);
-        
+
         if (!animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
             leftHandTarget.position = leftShoulder.position + ikTargetOffset;
@@ -50,5 +72,14 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             leftHand.target = reticle;
         }
+    }
+
+    public void ShootLazer()
+    {
+        float zRotationTopLazer = Mathf.Atan2(playerInput.mousePosition.y - topLazerPoint.position.y, playerInput.mousePosition.x - topLazerPoint.position.x) * Mathf.Rad2Deg;
+        float zRotationBottomLazer = Mathf.Atan2(playerInput.mousePosition.y - bottomLazerPoint.position.y, playerInput.mousePosition.x - bottomLazerPoint.position.x) * Mathf.Rad2Deg;
+        Rigidbody2D topLazer = Instantiate(lazerPrefab, topLazerPoint.position, Quaternion.Euler(0,0,zRotationTopLazer)).GetComponent<Rigidbody2D>();
+        Rigidbody2D bottomLazer = Instantiate(lazerPrefab, bottomLazerPoint.position, Quaternion.Euler(0, 0, zRotationBottomLazer)).GetComponent<Rigidbody2D>();
+        topLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
     }
 }

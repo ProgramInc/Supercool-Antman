@@ -8,22 +8,24 @@ public class PlayerInput : MonoBehaviour
     public bool isWalking;
     public bool isGrounded;
     [SerializeField] bool isWalled;
-
     [SerializeField] Transform groundRayCaster;
     [SerializeField] float speed = 6f;
     [SerializeField] int flipSign;
     [SerializeField] GameObject sword;
     [SerializeField] GameObject lightSaber;
+    PlayerStats playerStats;
     public Vector2 mousePosition { get; private set; }
 
     public Vector3 currentRotation;
     Camera cam;
 
     public bool IsAttacking;
+    public bool isShooting;
 
     private void Awake()
     {
         cam = Camera.main;
+        playerStats = GetComponentInChildren<PlayerStats>();
     }
     void Update()
     {
@@ -32,18 +34,41 @@ public class PlayerInput : MonoBehaviour
         Flip();
         OrientPlayer();
         CheckForAttacks();
+        CheckForShooting();
+        DrawSword();
+        DrawLightSaber();
+    }
 
+    private void CheckForShooting()
+    {
+        isShooting = Input.GetMouseButtonDown(1);
+    }
+
+    private void DrawLightSaber()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha2) && playerStats.currentEnergy > 0)
+        {
+            sword.SetActive(false);
+            lightSaber.SetActive(true);
+            playerStats.currentWeapon = PlayerWeaponTypes.Lightsaber;
+        }
+    }
+
+    void DrawSword()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             sword.SetActive(true);
             lightSaber.SetActive(false);
+            playerStats.currentWeapon = PlayerWeaponTypes.Sword;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            sword.SetActive(false);
-            lightSaber.SetActive(true);
-        }
+    public void ForceDrawSword()
+    {
+        sword.SetActive(true);
+        lightSaber.SetActive(false);
+        playerStats.currentWeapon = PlayerWeaponTypes.Sword;
     }
 
     private void CheckForAttacks()
@@ -52,10 +77,6 @@ public class PlayerInput : MonoBehaviour
         {
             IsAttacking = true;
         }
-        /*else
-        {
-            IsAttacking = false;
-        }*/
     }
 
     private void IsThePlayerWalking()
@@ -118,39 +139,12 @@ public class PlayerInput : MonoBehaviour
 
     void Flip()
     {
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded || isWalled)
             {
-                Physics2D.gravity = -Physics2D.gravity; 
+                Physics2D.gravity = -Physics2D.gravity;
             }
-
-
-            /*if (isGrounded)
-            {
-                if (transform.rotation == Quaternion.Euler(0, 0, 0))
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, -180);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                    Physics2D.gravity = -Physics2D.gravity;
-                }
-            }
-            else if (isWalled)
-            {
-                if (transform.rotation == Quaternion.Euler(0, 0, 90))
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, -90);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 90);
-                    Physics2D.gravity = -Physics2D.gravity;
-                }
-            }*/
         }
     }
 
@@ -187,7 +181,7 @@ public class PlayerInput : MonoBehaviour
             {
                 if (transform.position.x > mousePosition.x)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, currentRotation.z); 
+                    transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
                 }
                 else
                 {
