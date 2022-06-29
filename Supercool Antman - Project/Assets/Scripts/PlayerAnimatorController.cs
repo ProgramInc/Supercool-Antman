@@ -78,8 +78,9 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         float zRotationTopLazer = Mathf.Atan2(playerInput.mousePosition.y - topLazerPoint.position.y, playerInput.mousePosition.x - topLazerPoint.position.x) * Mathf.Rad2Deg;
         float zRotationBottomLazer = Mathf.Atan2(playerInput.mousePosition.y - bottomLazerPoint.position.y, playerInput.mousePosition.x - bottomLazerPoint.position.x) * Mathf.Rad2Deg;
-        Rigidbody2D topLazer = Instantiate(lazerPrefab, topLazerPoint.position, Quaternion.Euler(0,0,zRotationTopLazer)).GetComponent<Rigidbody2D>();
-        Rigidbody2D bottomLazer = Instantiate(lazerPrefab, bottomLazerPoint.position, Quaternion.Euler(0, 0, zRotationBottomLazer)).GetComponent<Rigidbody2D>();
+        Rigidbody2D topLazer = Instantiate(lazerPrefab, topLazerPoint.position, Quaternion.Euler(0,0,zRotationTopLazer+90)).GetComponent<Rigidbody2D>();
+        Rigidbody2D bottomLazer = Instantiate(lazerPrefab, bottomLazerPoint.position, Quaternion.Euler(0, 0, zRotationBottomLazer + 90)).GetComponent<Rigidbody2D>();
         topLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
+        bottomLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
     }
 }
