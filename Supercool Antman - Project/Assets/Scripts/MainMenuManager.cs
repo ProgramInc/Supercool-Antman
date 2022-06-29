@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
     void PlayGame()
     {
         print("play game");
+        SceneManager.LoadScene(1);
     }
 
     void SoundToggle()
