@@ -88,11 +88,13 @@ public class Enemy : MonoBehaviour
         {
             /*print(other.tag);*/
             health -= other.GetComponent<Weapon>().Damage;
+
             CheckDeath();
         }
         else if (other.gameObject.GetComponent<PlayerStats>())
         {
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
+
         }
     }
 
