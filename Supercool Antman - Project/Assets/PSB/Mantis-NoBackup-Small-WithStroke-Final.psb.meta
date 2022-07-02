@@ -93,8 +93,8 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Leg Right
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.16121225, y: 0.91294837}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -114,8 +114,8 @@ ScriptedImporter:
     uvTransform: {x: -796, y: 1601}
   - name: Leg Left
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.87170595, y: 0.92926747}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
