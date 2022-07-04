@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: e454fcb431d96604f9eea17d257bff67
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: After Explosion copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 365
+      y: 370
+      width: 125
+      height: 119
+    spriteID: 71c70faa33741a5409c6f4850de892e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2352, y: 342}
+  - name: After Explosion copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 676
+      width: 125
+      height: 119
+    spriteID: 606d0f538c981204b96e9e52ff65ce1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2322, y: 648}
+  - name: After Explosion copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 803
+      width: 125
+      height: 119
+    spriteID: fa29035baffda5043b48a34382eced38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2132, y: 775}
+  - name: After Explosion
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 367
+      y: 526
+      width: 125
+      height: 119
+    spriteID: 9631b8f040193604381cb2922bc88318
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1777, y: 498}
+  - name: Explosion copy 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 192
+      height: 186
+    spriteID: afa5cd55f2c4ca949a4fe1ac3518d64d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1911, y: 4}
+  - name: Explosion copy 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 198
+      width: 192
+      height: 186
+    spriteID: d06c2c80ac83fa840a9443aeb5e4df4d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1719, y: 195}
+  - name: Explosion copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 586
+      width: 192
+      height: 183
+    spriteID: 5e9077f05216f3d4182df8998553ea2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1527, y: 586}
+  - name: Explosion copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 392
+      width: 192
+      height: 186
+    spriteID: 32f6bca26a3a277438580bf85cb8bf65
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1335, y: 392}
+  - name: Explosion copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 777
+      width: 192
+      height: 183
+    spriteID: ad734e979a63c404a8bf6ae15a902fdb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1143, y: 777}
+  - name: Explosion
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 526
+      width: 155
+      height: 142
+    spriteID: 882badf2679178247b293bea9e54cec0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -764, y: 501}
+  - name: Pre-Explosion copy 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 4
+      width: 183
+      height: 175
+    spriteID: 22af91a1b7aedac4d837534d639ee9e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -751, y: 4}
+  - name: Pre-Explosion copy 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 187
+      width: 183
+      height: 175
+    spriteID: 00ada4d3e4407f54aaa171f8bf575fef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -568, y: 187}
+  - name: Pre-Explosion copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 370
+      width: 153
+      height: 148
+    spriteID: 2ba2ade6d3bd7424c81f72ee829893fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -392, y: 357}
+  - name: Pre-Explosion copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 395
+      y: 4
+      width: 105
+      height: 102
+    spriteID: b86b7beb1d820d84f83e7c71c3ba6005
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -34, y: -32}
+  - name: Pre-Explosion copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 930
+      width: 77
+      height: 72
+    spriteID: 5d219aceda7416d49969fdc85fdefc61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -48, y: 879}
+  - name: Pre-Explosion
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 367
+      y: 653
+      width: 114
+      height: 119
+    spriteID: bfaca8da037bd7e4c92e888ead2bcd7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 316, y: 619}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: After Explosion copy 3
+    spriteName: After Explosion copy 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 71c70faa33741a5409c6f4850de892e7
+    layerID: 151
+    mosaicPosition: {x: 365, y: 370}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: After Explosion copy 2
+    spriteName: After Explosion copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 606d0f538c981204b96e9e52ff65ce1e
+    layerID: 145
+    mosaicPosition: {x: 204, y: 676}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: After Explosion copy
+    spriteName: After Explosion copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fa29035baffda5043b48a34382eced38
+    layerID: 139
+    mosaicPosition: {x: 204, y: 803}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: After Explosion
+    spriteName: After Explosion
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9631b8f040193604381cb2922bc88318
+    layerID: 24
+    mosaicPosition: {x: 367, y: 526}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion copy 5
+    spriteName: Explosion copy 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: afa5cd55f2c4ca949a4fe1ac3518d64d
+    layerID: 133
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion copy 4
+    spriteName: Explosion copy 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d06c2c80ac83fa840a9443aeb5e4df4d
+    layerID: 125
+    mosaicPosition: {x: 4, y: 198}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion copy 3
+    spriteName: Explosion copy 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5e9077f05216f3d4182df8998553ea2b
+    layerID: 117
+    mosaicPosition: {x: 4, y: 586}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion copy 2
+    spriteName: Explosion copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 32f6bca26a3a277438580bf85cb8bf65
+    layerID: 109
+    mosaicPosition: {x: 4, y: 392}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion copy
+    spriteName: Explosion copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ad734e979a63c404a8bf6ae15a902fdb
+    layerID: 101
+    mosaicPosition: {x: 4, y: 777}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Explosion
+    spriteName: Explosion
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 882badf2679178247b293bea9e54cec0
+    layerID: 18
+    mosaicPosition: {x: 204, y: 526}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion copy 5
+    spriteName: Pre-Explosion copy 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 22af91a1b7aedac4d837534d639ee9e8
+    layerID: 193
+    mosaicPosition: {x: 204, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion copy 4
+    spriteName: Pre-Explosion copy 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 00ada4d3e4407f54aaa171f8bf575fef
+    layerID: 186
+    mosaicPosition: {x: 204, y: 187}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion copy 3
+    spriteName: Pre-Explosion copy 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2ba2ade6d3bd7424c81f72ee829893fa
+    layerID: 179
+    mosaicPosition: {x: 204, y: 370}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion copy 2
+    spriteName: Pre-Explosion copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b86b7beb1d820d84f83e7c71c3ba6005
+    layerID: 172
+    mosaicPosition: {x: 395, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion copy
+    spriteName: Pre-Explosion copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5d219aceda7416d49969fdc85fdefc61
+    layerID: 165
+    mosaicPosition: {x: 204, y: 930}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pre-Explosion
+    spriteName: Pre-Explosion
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bfaca8da037bd7e4c92e888ead2bcd7c
+    layerID: 158
+    mosaicPosition: {x: 367, y: 653}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
