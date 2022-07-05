@@ -39,7 +39,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
             if (playerStats.currentEnergy <= 0)
             {
-                print(playerStats.currentEnergy);
+                /*print(playerStats.currentEnergy);*/
                 playerInput.ForceDrawSword();
             }
         }

@@ -8,7 +8,7 @@ public class EnemyWeapons : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("trigger entered");
+        /*print("trigger entered");*/
         if (other.gameObject.GetComponentInChildren<PlayerStats>())
         {
             other.gameObject.GetComponentInChildren<PlayerStats>().ChangeHealth(-damage);
