@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     bool hasTarget;
     [SerializeField] float movementSpeed;
     [SerializeField] Animator anim;
-    int health;
+    public int Health;
     [SerializeField] float minDistanceFromPlayer = 0;
     [SerializeField] float maxDistanceFromPlayer = 5;
     GameObject player;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
-        health = 100;
+        Health = 100;
         currentState = EnemyStates.KeepDistanceFromPlayer;
         player = FindObjectOfType<PlayerInput>().gameObject;
     }
@@ -39,7 +39,11 @@ public class Enemy : MonoBehaviour
         {
             case EnemyStates.KeepDistanceFromPlayer:
 
-                CheckDeath();
+                if (CheckDeath())
+                {
+                    currentState = EnemyStates.Death;
+                    break;
+                }
 
                 if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer)
                 {
@@ -55,6 +59,11 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case EnemyStates.Attack:
+                if (CheckDeath())
+                {
+                    currentState = EnemyStates.Death;
+                    break;
+                }
                 AttackPlayer();
                 /*print("attacking");*/
                 currentState = EnemyStates.KeepDistanceFromPlayer;
@@ -73,20 +82,22 @@ public class Enemy : MonoBehaviour
         rb.MovePosition(Vector2.MoveTowards(transform.position, fleeDestination, movementSpeed / 2));
     }
 
-    private void CheckDeath()
+    private bool CheckDeath()
     {
-        if (health <= 0)
+        if (Health <= 0)
         {
-            currentState = EnemyStates.Death;
+            
+            return true;
         }
+        return false;
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sword") || other.CompareTag("Lazer"))
         {
-            /*print(other.tag);*/
+            *//*print(other.tag);*//*
             health -= other.GetComponent<Weapon>().Damage;
 
             CheckDeath();
@@ -96,7 +107,7 @@ public class Enemy : MonoBehaviour
             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
 
         }
-    }
+    }*/
 
     void AttackPlayer()
     {
@@ -105,19 +116,19 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Attack");
     }
 
-   /* private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
-        {
-            print(other.gameObject.tag);
-            health -= other.gameObject.GetComponent<Weapon>().Damage;
-            CheckDeath();
-        }
-        else if (other.gameObject.GetComponent<PlayerStats>())
-        {
-            other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
-        }
-    }*/
+    /* private void OnCollisionEnter2D(Collision2D other)
+     {
+         if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
+         {
+             print(other.gameObject.tag);
+             health -= other.gameObject.GetComponent<Weapon>().Damage;
+             CheckDeath();
+         }
+         else if (other.gameObject.GetComponent<PlayerStats>())
+         {
+             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
+         }
+     }*/
     void EnemyDeath()
     {
         if (UnityEngine.Random.Range(0, 100) < pickupDropChance)
