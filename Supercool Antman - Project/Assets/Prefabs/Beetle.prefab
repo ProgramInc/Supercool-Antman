@@ -838,6 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  ouchCloudPrefab: {fileID: 561712643051907788, guid: fdd5aa7d57b65eb4b8df25911a560792, type: 3}
 --- !u!4 &475283817125626265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7694217771748202108, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
