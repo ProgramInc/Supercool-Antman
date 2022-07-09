@@ -266,6 +266,11 @@ MonoBehaviour:
   wallRight: {fileID: 2130364393}
   floor: {fileID: 499754085}
   ceiling: {fileID: 1910129643}
+  shakeBuffer: 0.5
+  isOnWallLeft: 0
+  isOnWallRight: 0
+  isOnFloor: 0
+  isOnCeiling: 0
 --- !u!95 &112147083
 Animator:
   serializedVersion: 4
