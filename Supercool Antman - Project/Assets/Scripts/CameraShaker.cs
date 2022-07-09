@@ -8,22 +8,23 @@ public class CameraShaker : MonoBehaviour
     [SerializeField] GameObject wallRight;
     [SerializeField] GameObject floor;
     [SerializeField] GameObject ceiling;
+    [SerializeField] float shakeBuffer;
 
-    private bool isOnWallLeft;
-    private bool isOnWallRight;
-    private bool isOnFloor = true;
-    private bool isOnCeiling;
+    public bool isOnWallLeft;
+    public bool isOnWallRight;
+    public bool isOnFloor;
+    public bool isOnCeiling;
 
     private float timeSinceGrounded;
     private float timeSinceWalled;
     private Animator animator;
 
-    Collider2D overlapCircle;
+    Collider2D feetOverlapCircle;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        overlapCircle = Physics2D.OverlapCircle(feetPosition.transform.position, 3f);
+        feetOverlapCircle = Physics2D.OverlapCircle(feetPosition.transform.position, 3f);
     }
 
     private void Update()
@@ -34,38 +35,87 @@ public class CameraShaker : MonoBehaviour
         }
         else
         {
-            timeSinceGrounded += Time.deltaTime;
+            timeSinceGrounded += Time.time;
         }
+
         LandOnCeiling();
         LandOnFloor();
+        LandOnWallLeft();
+        LandOnWallRight();
+        IsOnWhat();
+
+
     }
 
+    private void IsOnWhat()
+    {
+        if (feetOverlapCircle.IsTouching(floor.GetComponent<BoxCollider2D>()))
+        {
+            isOnFloor = true;
+            isOnCeiling = false;
+            isOnWallLeft = false;
+            isOnWallRight = false;
+        }
+        else if (feetOverlapCircle.IsTouching(ceiling.GetComponent<BoxCollider2D>()))
+        {
+            isOnFloor = false;
+            isOnCeiling = true;
+            isOnWallLeft = false;
+            isOnWallRight = false;
+        }
+        else if (feetOverlapCircle.IsTouching(wallLeft.GetComponent<BoxCollider2D>()))
+        {
+            isOnFloor = false;
+            isOnCeiling = false;
+            isOnWallLeft = true;
+            isOnWallRight = false;
+        }
+        else if (feetOverlapCircle.IsTouching(wallRight.GetComponent<BoxCollider2D>()))
+        {
+            isOnFloor = false;
+            isOnCeiling = false;
+            isOnWallLeft = false;
+            isOnWallRight = true;
+        }
+    }
 
     private void LandOnCeiling()
     {
-        bool isTouching = Physics2D.IsTouching(overlapCircle, ceiling.gameObject.GetComponent<BoxCollider2D>());
+        bool isTouching = Physics2D.IsTouching(feetOverlapCircle, ceiling.GetComponent<BoxCollider2D>());
 
-        if (timeSinceGrounded > 0 && isTouching && isOnCeiling == false)
+        if (timeSinceGrounded > shakeBuffer && isTouching && isOnCeiling == false && isOnWallRight == false && isOnWallLeft == false)
         {
-            print("SUPPOSE TO TRIGGER SHAKE");
-
-            isOnCeiling = true;
             animator.SetTrigger("shakeCeiling");
-            isOnFloor = false;
         }
     }
 
     private void LandOnFloor()
     {
-        bool isTouching = Physics2D.IsTouching(overlapCircle, floor.gameObject.GetComponent<BoxCollider2D>());
+        bool isTouching = Physics2D.IsTouching(feetOverlapCircle, floor.GetComponent<BoxCollider2D>());
 
-        if (timeSinceGrounded > 0 && isTouching && isOnFloor == false)
+        if (timeSinceGrounded > shakeBuffer && isTouching && isOnFloor == false && isOnWallRight == false && isOnWallLeft == false)
         {
-            print("SUPPOSE TO TRIGGER SHAKE");
-
-            isOnFloor = true;
             animator.SetTrigger("shakeFloor");
-            isOnCeiling = false;
+        }
+    }
+
+    private void LandOnWallLeft()
+    {
+        bool isTouching = Physics2D.IsTouching(feetOverlapCircle, wallLeft.GetComponent<BoxCollider2D>());
+
+        if (timeSinceGrounded > shakeBuffer && isTouching && isOnWallLeft == false && isOnFloor == false && isOnCeiling == false)
+        {
+            animator.SetTrigger("shakeWallLeft");
+        }
+    }
+
+    private void LandOnWallRight()
+    {
+        bool isTouching = Physics2D.IsTouching(feetOverlapCircle, wallRight.GetComponent<BoxCollider2D>());
+
+        if (timeSinceGrounded > shakeBuffer && isTouching && isOnWallRight == false && isOnFloor == false && isOnCeiling == false)
+        {
+            animator.SetTrigger("shakeWallRight");
         }
     }
 }
