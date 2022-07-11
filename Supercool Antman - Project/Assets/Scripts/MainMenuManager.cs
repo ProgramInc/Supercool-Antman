@@ -8,6 +8,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] Button soundButton;
     [SerializeField] Button quitButton;
 
+    public AudioClip mouseOverSound;
+
     bool isSoundOn = true;
 
     private void OnEnable()
