@@ -20,6 +20,7 @@ public class PlayerAnimatorController : MonoBehaviour
     [SerializeField] Transform bottomLazerPoint;
     [SerializeField] float lazerSpeed;
     [SerializeField] GameObject fadingAttackPrefab;
+    [SerializeField] Weapon[] weapons;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -85,16 +86,15 @@ public class PlayerAnimatorController : MonoBehaviour
         bottomLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
     }
 
-    public void CreateAttackSprite()
+    void SendDoDamageMessageToWeapon()
     {
-        /*float zAngle = Mathf.Atan2(reticle.position.y - transform.position.y, reticle.position.x - transform.position.x) * Mathf.Rad2Deg;
-        *//*Instantiate(fadingAttackPrefab, transform.position + (reticle.position - transform.position).normalized * 0.1f, Quaternion.Euler(playerInput.isFacingLeft ? 0 : 180, playerInput.transform.localEulerAngles.y, zAngle));*/
-        /*Instantiate(fadingAttackPrefab, (transform.position + transform.forward).normalized * 0.1f + (reticle.position - transform.position).normalized * 0.1f, Quaternion.Euler(playerInput.isFacingLeft ? 0 : 180, playerInput.transform.localEulerAngles.y, zAngle));*//*
-        SpriteRenderer spriteRenderer = Instantiate(fadingAttackPrefab, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
-        spriteRenderer.flipX = playerInput.isFacingLeft;
-        *//*print(Mathf.Atan2(reticle.position.y - transform.position.y, reticle.position.x - transform.position.x) * Mathf.Rad2Deg);*/
-
-
+        foreach (Weapon weapon in weapons)
+        {
+            if (weapon.gameObject.activeInHierarchy)
+            {
+                weapon.DoDamage();
+            }
+        }
     }
 
 }
