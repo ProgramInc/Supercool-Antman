@@ -4,14 +4,43 @@ public class WeaponEffect : MonoBehaviour
 {
     [SerializeField] GameObject swordImpactPrefab;
     [SerializeField] Weapon weapon;
+    [SerializeField] Animator cameraAnimator;
 
     private bool isAlreadyInstantiated;
+    private bool isAlreadyZooming;
+    private float zoomCooldown = 1f;
+    private float timeSinceLastZoom;
+
+    private void Start()
+    {
+        timeSinceLastZoom = 0;
+    }
+
+    private void Update()
+    {
+        if (isAlreadyZooming)
+        {
+            timeSinceLastZoom = 0;
+            isAlreadyZooming = true;
+        }
+        else
+        {
+            timeSinceLastZoom += Time.deltaTime;
+            isAlreadyZooming = false;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponentInParent<Enemy>())
         {
             collision.GetComponentInParent<Enemy>().Health -= weapon.Damage;
+
+            if (!isAlreadyZooming && timeSinceLastZoom > zoomCooldown)
+            {
+                cameraAnimator.SetTrigger("zoomHit");
+            }
+
             if (!isAlreadyInstantiated)
             {
                 isAlreadyInstantiated = true;
