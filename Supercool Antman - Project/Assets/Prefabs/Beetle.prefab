@@ -952,6 +952,7 @@ MonoBehaviour:
   - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
   - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
+  weaponHitRadius: 0
 --- !u!114 &1998701485
 MonoBehaviour:
   m_ObjectHideFlags: 0
