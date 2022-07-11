@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyStates.Death:
                 EnemyDeath();
-                Destroy(tempBloodStain, 0.5f);
+
                 break;
             default:
                 break;
@@ -151,6 +151,8 @@ public class Enemy : MonoBehaviour
             tempBloodStain = Instantiate(bloodSplatterArray[randomBloodIndex], transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(-45, 45)));
             bloodSplattersInstantiated += 1;
         }
+
+        Destroy(tempBloodStain, 0.7f);
     }
 }
 

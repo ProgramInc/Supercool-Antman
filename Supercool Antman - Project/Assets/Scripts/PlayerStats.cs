@@ -10,8 +10,11 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] Image healthImage;
     [SerializeField] Image energyImage;
 
+    [SerializeField] GameObject playerDeathBloodSplatterPrefab;
+
     public float currentHealth;
     public float currentEnergy;
+    public bool isAlive = true;
 
     public PlayerWeaponTypes currentWeapon;
 
@@ -54,6 +57,8 @@ public class PlayerStats : MonoBehaviour
     private void PlayerDeath()
     {
         print("you are dead");
+        isAlive = false;
+        Instantiate(playerDeathBloodSplatterPrefab, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
         Destroy(gameObject);
     }
 
