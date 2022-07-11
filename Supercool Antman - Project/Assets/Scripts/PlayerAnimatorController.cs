@@ -16,9 +16,10 @@ public class PlayerAnimatorController : MonoBehaviour
     [Range(0.4f, 1)]
     [SerializeField] float swordDistanceFromBody;
     [SerializeField] Transform reticle;
-    [SerializeField]Transform topLazerPoint;
+    [SerializeField] Transform topLazerPoint;
     [SerializeField] Transform bottomLazerPoint;
     [SerializeField] float lazerSpeed;
+    [SerializeField] GameObject fadingAttackPrefab;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -35,12 +36,11 @@ public class PlayerAnimatorController : MonoBehaviour
             if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
             {
                 playerStats.ChangeEnergy(-5);
-            }
-
-            if (playerStats.currentEnergy <= 0)
-            {
-                /*print(playerStats.currentEnergy);*/
-                playerInput.ForceDrawSword();
+                if (playerStats.currentEnergy <= 0)
+                {
+                    print(playerStats.currentEnergy);
+                    playerInput.ForceDrawSword();
+                }
             }
         }
 
@@ -58,7 +58,8 @@ public class PlayerAnimatorController : MonoBehaviour
     private void LateUpdate()
     {
         IKChain2D head = headSolver.GetChain(0);
-        head.target.position = playerInput.mousePosition;
+        head.target.position = reticle.position;
+        /*head.target.position = playerInput.mousePosition;*/
 
         Vector3 ikTargetOffset = (leftShoulder.position - (Vector3)playerInput.mousePosition).normalized * swordDistanceFromBody;
         IKChain2D leftHand = leftArmSolver.GetChain(0);
@@ -78,9 +79,22 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         float zRotationTopLazer = Mathf.Atan2(playerInput.mousePosition.y - topLazerPoint.position.y, playerInput.mousePosition.x - topLazerPoint.position.x) * Mathf.Rad2Deg;
         float zRotationBottomLazer = Mathf.Atan2(playerInput.mousePosition.y - bottomLazerPoint.position.y, playerInput.mousePosition.x - bottomLazerPoint.position.x) * Mathf.Rad2Deg;
-        Rigidbody2D topLazer = Instantiate(lazerPrefab, topLazerPoint.position, Quaternion.Euler(0,0,zRotationTopLazer+90)).GetComponent<Rigidbody2D>();
+        Rigidbody2D topLazer = Instantiate(lazerPrefab, topLazerPoint.position, Quaternion.Euler(0, 0, zRotationTopLazer + 90)).GetComponent<Rigidbody2D>();
         Rigidbody2D bottomLazer = Instantiate(lazerPrefab, bottomLazerPoint.position, Quaternion.Euler(0, 0, zRotationBottomLazer + 90)).GetComponent<Rigidbody2D>();
         topLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
         bottomLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);
     }
+
+    public void CreateAttackSprite()
+    {
+        /*float zAngle = Mathf.Atan2(reticle.position.y - transform.position.y, reticle.position.x - transform.position.x) * Mathf.Rad2Deg;
+        *//*Instantiate(fadingAttackPrefab, transform.position + (reticle.position - transform.position).normalized * 0.1f, Quaternion.Euler(playerInput.isFacingLeft ? 0 : 180, playerInput.transform.localEulerAngles.y, zAngle));*/
+        /*Instantiate(fadingAttackPrefab, (transform.position + transform.forward).normalized * 0.1f + (reticle.position - transform.position).normalized * 0.1f, Quaternion.Euler(playerInput.isFacingLeft ? 0 : 180, playerInput.transform.localEulerAngles.y, zAngle));*//*
+        SpriteRenderer spriteRenderer = Instantiate(fadingAttackPrefab, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = playerInput.isFacingLeft;
+        *//*print(Mathf.Atan2(reticle.position.y - transform.position.y, reticle.position.x - transform.position.x) * Mathf.Rad2Deg);*/
+
+
+    }
+
 }
