@@ -417,14 +417,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 46503241, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9678169
-      objectReference: {fileID: 0}
-    - target: {fileID: 46503241, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2516556
-      objectReference: {fileID: 0}
     - target: {fileID: 328762385632678339, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -472,22 +464,6 @@ PrefabInstance:
     - target: {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
       propertyPath: m_Name
       value: Beetle
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874034163931805455, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8882875
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874034163931805455, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.45928794
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035986978047581091, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.98657596
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035986978047581091, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.16330357
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
@@ -1975,24 +1951,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1413854427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3868466664069204387, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
-  m_PrefabInstance: {fileID: 2005002942777365012}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1413854433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413854427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c6bba2aa411b846b99c8243b5e6794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraAnimator: {fileID: 112147082}
 --- !u!1001 &1483792656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2623,6 +2581,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1413854433, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
+      propertyPath: cameraAnimator
+      value: 
+      objectReference: {fileID: 112147082}
     - target: {fileID: 5550746309814135346, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
       propertyPath: energyImage
       value: 
