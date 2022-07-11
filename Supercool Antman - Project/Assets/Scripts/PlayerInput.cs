@@ -113,27 +113,31 @@ public class PlayerInput : MonoBehaviour
 
     private void GroundCheck()
     {
-        RaycastHit2D[] hit = Physics2D.RaycastAll(groundRayCaster.transform.position, -transform.up * 2, 1.5f);
-        Debug.DrawRay(groundRayCaster.transform.position, -transform.up * 2, Color.red);
-        foreach (RaycastHit2D raycastHit in hit)
+        if (playerStats.isAlive)
         {
-            if (raycastHit.collider.CompareTag("FloorOrCeiling"))
-            {
-                isGrounded = true;
+            RaycastHit2D[] hit = Physics2D.RaycastAll(groundRayCaster.transform.position, -transform.up * 2, 1.5f);
 
-            }
-            else
+            Debug.DrawRay(groundRayCaster.transform.position, -transform.up * 2, Color.red);
+            foreach (RaycastHit2D raycastHit in hit)
             {
-                isGrounded = false;
-            }
-            if (raycastHit.collider.CompareTag("Wall"))
-            {
-                isWalled = true;
-            }
-            else
-            {
-                isWalled = false;
-            }
+                if (raycastHit.collider.CompareTag("FloorOrCeiling"))
+                {
+                    isGrounded = true;
+
+                }
+                else
+                {
+                    isGrounded = false;
+                }
+                if (raycastHit.collider.CompareTag("Wall"))
+                {
+                    isWalled = true;
+                }
+                else
+                {
+                    isWalled = false;
+                }
+            } 
         }
     }
 
