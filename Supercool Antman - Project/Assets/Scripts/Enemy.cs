@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] int pickupDropChance;
     Rigidbody2D rb;
     [SerializeField] GameObject[] bloodSplatterArray;
-    int randomBloodIndex;
     GameObject tempBloodStain;
+    int bloodSplattersInstantiated;
 
     private void Awake()
     {
@@ -145,8 +145,12 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        randomBloodIndex = UnityEngine.Random.Range(0, 3);
-        tempBloodStain = Instantiate(bloodSplatterArray[0], transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(-45, 45)));
+        int randomBloodIndex = UnityEngine.Random.Range(0, 3);
+        if (bloodSplattersInstantiated < 1)
+        {
+            tempBloodStain = Instantiate(bloodSplatterArray[randomBloodIndex], transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(-45, 45)));
+            bloodSplattersInstantiated += 1;
+        }
     }
 }
 
