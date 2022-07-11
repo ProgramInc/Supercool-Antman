@@ -8,7 +8,7 @@ public class WeaponEffect : MonoBehaviour
 
     private bool isAlreadyInstantiated;
     private bool isAlreadyZooming;
-    private float zoomCooldown = 1f;
+    private float zoomCooldown = 0.5f;
     private float timeSinceLastZoom;
 
     private void Start()
@@ -18,14 +18,13 @@ public class WeaponEffect : MonoBehaviour
 
     private void Update()
     {
-        if (isAlreadyZooming)
+        if (!isAlreadyZooming)
         {
-            timeSinceLastZoom = 0;
-            isAlreadyZooming = true;
+            timeSinceLastZoom += Time.deltaTime;
         }
         else
         {
-            timeSinceLastZoom += Time.deltaTime;
+            timeSinceLastZoom = 0;
             isAlreadyZooming = false;
         }
     }
@@ -36,10 +35,12 @@ public class WeaponEffect : MonoBehaviour
         {
             collision.GetComponentInParent<Enemy>().Health -= weapon.Damage;
 
-            if (!isAlreadyZooming && timeSinceLastZoom > zoomCooldown)
+            if (timeSinceLastZoom > zoomCooldown)
             {
                 cameraAnimator.SetTrigger("zoomHit");
+                isAlreadyZooming = true;
             }
+
 
             if (!isAlreadyInstantiated)
             {
