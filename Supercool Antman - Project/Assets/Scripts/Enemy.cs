@@ -126,7 +126,8 @@ public class Enemy : MonoBehaviour
 
     void DoDamageToPlayer()
     {
-        PlayerStats playerStats = Physics2D.OverlapCircle(transform.position, weaponHitRadius, ~9).GetComponentInChildren<PlayerStats>();
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, weaponHitRadius, ~9);
+        PlayerStats playerStats = playerCollider.GetComponentInChildren<PlayerStats>();
         if (playerStats != null)
         {
             playerStats.ChangeHealth(-damage);
