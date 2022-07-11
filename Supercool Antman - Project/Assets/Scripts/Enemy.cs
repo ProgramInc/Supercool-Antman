@@ -18,6 +18,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] int pickupDropChance;
     Rigidbody2D rb;
+    [SerializeField] GameObject[] bloodSplatterArray;
+    int randomBloodIndex;
+    GameObject tempBloodStain;
 
     private void Awake()
     {
@@ -28,11 +31,14 @@ public class Enemy : MonoBehaviour
         Health = 100;
         currentState = EnemyStates.KeepDistanceFromPlayer;
         player = FindObjectOfType<PlayerInput>().gameObject;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0));
 
         switch (currentState)
@@ -70,6 +76,7 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyStates.Death:
                 EnemyDeath();
+                Destroy(tempBloodStain, 0.5f);
                 break;
             default:
                 break;
@@ -129,6 +136,7 @@ public class Enemy : MonoBehaviour
              other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
          }
      }*/
+
     void EnemyDeath()
     {
         if (UnityEngine.Random.Range(0, 100) < pickupDropChance)
@@ -136,6 +144,9 @@ public class Enemy : MonoBehaviour
             PickupManager.OnDropPickup(transform.position);
             Destroy(gameObject);
         }
+
+        randomBloodIndex = UnityEngine.Random.Range(0, 3);
+        tempBloodStain = Instantiate(bloodSplatterArray[0], transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(-45, 45)));
     }
 }
 
