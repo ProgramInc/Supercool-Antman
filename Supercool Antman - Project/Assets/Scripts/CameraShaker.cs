@@ -43,8 +43,6 @@ public class CameraShaker : MonoBehaviour
         LandOnWallLeft();
         LandOnWallRight();
         IsOnWhat();
-
-
     }
 
     private void IsOnWhat()
