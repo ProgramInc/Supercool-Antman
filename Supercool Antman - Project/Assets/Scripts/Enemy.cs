@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public delegate void EnemyDeathAction();
+    public static EnemyDeathAction OnEnemyDeath;
+
     GameManager gameManager;
     Vector3 nextTarget;
     bool hasTarget;
@@ -21,6 +24,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject[] bloodSplatterArray;
     GameObject tempBloodStain;
     int bloodSplattersInstantiated;
+    [SerializeField] float weaponHitRadius;
 
     private void Awake()
     {
@@ -31,13 +35,13 @@ public class Enemy : MonoBehaviour
         Health = 100;
         currentState = EnemyStates.KeepDistanceFromPlayer;
         player = FindObjectOfType<PlayerInput>().gameObject;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0));
 
@@ -53,7 +57,7 @@ public class Enemy : MonoBehaviour
 
                 if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer)
                 {
-                    rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed));
+                    MoveTowardsPlayer();
                 }
                 else if (Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
                 {
@@ -70,7 +74,12 @@ public class Enemy : MonoBehaviour
                     currentState = EnemyStates.Death;
                     break;
                 }
-                AttackPlayer();
+                else if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer || Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
+                {
+                    currentState = EnemyStates.KeepDistanceFromPlayer;
+                    break;
+                }
+                ChargePlayer();
                 /*print("attacking");*/
                 currentState = EnemyStates.KeepDistanceFromPlayer;
                 break;
@@ -83,6 +92,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void MoveTowardsPlayer()
+    {
+        rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed));
+    }
+
     private void moveAwayFromPlayer()
     {
         Vector2 fleeDestination = (transform.position - player.transform.position).normalized;
@@ -93,56 +107,37 @@ public class Enemy : MonoBehaviour
     {
         if (Health <= 0)
         {
-            
+
             return true;
         }
         return false;
     }
 
 
-    /*private void OnTriggerEnter2D(Collider2D other)
+
+
+    void ChargePlayer()
     {
-        if (other.CompareTag("Sword") || other.CompareTag("Lazer"))
-        {
-            *//*print(other.tag);*//*
-            health -= other.GetComponent<Weapon>().Damage;
-
-            CheckDeath();
-        }
-        else if (other.gameObject.GetComponent<PlayerStats>())
-        {
-            other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
-
-        }
-    }*/
-
-    void AttackPlayer()
-    {
-        minDistanceFromPlayer = 0;
+        minDistanceFromPlayer = 1;
         rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * 8));
         anim.SetTrigger("Attack");
     }
 
-    /* private void OnCollisionEnter2D(Collision2D other)
-     {
-         if (other.gameObject.CompareTag("Sword") || other.gameObject.CompareTag("Lazer"))
-         {
-             print(other.gameObject.tag);
-             health -= other.gameObject.GetComponent<Weapon>().Damage;
-             CheckDeath();
-         }
-         else if (other.gameObject.GetComponent<PlayerStats>())
-         {
-             other.gameObject.GetComponent<PlayerStats>().ChangeHealth(-damage);
-         }
-     }*/
+
+    void DoDamageToPlayer()
+    {
+        PlayerStats playerStats = Physics2D.OverlapCircle(transform.position, weaponHitRadius, ~9).GetComponentInChildren<PlayerStats>();
+        if (playerStats != null)
+        {
+            playerStats.ChangeHealth(-damage);
+        }
+    }
 
     void EnemyDeath()
     {
         if (UnityEngine.Random.Range(0, 100) < pickupDropChance)
         {
             PickupManager.OnDropPickup(transform.position);
-            Destroy(gameObject);
         }
 
         int randomBloodIndex = UnityEngine.Random.Range(0, 3);
@@ -152,7 +147,9 @@ public class Enemy : MonoBehaviour
             bloodSplattersInstantiated += 1;
         }
 
+        OnEnemyDeath?.Invoke();
         Destroy(tempBloodStain, 0.7f);
+        Destroy(gameObject);
     }
 }
 

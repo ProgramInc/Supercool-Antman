@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class WeaponEffect : MonoBehaviour
 {
-    [SerializeField] GameObject swordImpactPrefab;
-    [SerializeField] Weapon weapon;
+    /*[SerializeField] GameObject swordImpactPrefab;*/
+    /*[SerializeField] Weapon weapon;*/
     [SerializeField] Animator cameraAnimator;
 
-    private bool isAlreadyInstantiated;
+    /*private bool isAlreadyInstantiated;*/
     private bool isAlreadyZooming;
     private float zoomCooldown = 0.5f;
     private float timeSinceLastZoom;
@@ -29,7 +29,16 @@ public class WeaponEffect : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TriggerZoom()
+    {
+        if (timeSinceLastZoom > zoomCooldown)
+        {
+            cameraAnimator.SetTrigger("zoomHit");
+            isAlreadyZooming = true;
+        }
+    }
+
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponentInParent<Enemy>())
         {
@@ -42,7 +51,7 @@ public class WeaponEffect : MonoBehaviour
             }
 
 
-            if (!isAlreadyInstantiated)
+            *//*if (!isAlreadyInstantiated)
             {
                 isAlreadyInstantiated = true;
                 Instantiate(swordImpactPrefab, collision.GetComponentInParent<Enemy>().transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
@@ -52,8 +61,8 @@ public class WeaponEffect : MonoBehaviour
                 isAlreadyInstantiated = false;
             }
             
-            print(collision.GetComponentInParent<Enemy>().Health);
-            /*Instantiate(impactPrefab, collision.transform.position, Quaternion.Euler(0, 0, collision.transform.rotation.z));*/
+            print(collision.GetComponentInParent<Enemy>().Health);*/
+            /*Instantiate(impactPrefab, collision.transform.position, Quaternion.Euler(0, 0, collision.transform.rotation.z));*//*
         }
-    }
+    }*/
 }
