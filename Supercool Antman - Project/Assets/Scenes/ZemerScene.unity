@@ -579,29 +579,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 575154105446178291, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
       propertyPath: m_Name
       value: Beetle
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025949907358242291, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485027732105067419, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627678354266093611, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469645208578276421, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
