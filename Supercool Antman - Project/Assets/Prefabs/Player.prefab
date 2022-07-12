@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 5550746310779337652}
   - component: {fileID: 5550746310779337655}
   - component: {fileID: 5550746310779337653}
-  - component: {fileID: 591701519}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -169,26 +168,6 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   IsAttacking: 0
   isShooting: 0
---- !u!95 &591701519
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5550746310779337648}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7bb99d0db099a3e48a8238f79c856a18, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5550746311484306631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,6 +275,14 @@ PrefabInstance:
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1688002293, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: bodyPosition
+      value: 
+      objectReference: {fileID: 6787494664227017150}
+    - target: {fileID: 1688002293, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: ouchCloudPrefab
+      value: 
+      objectReference: {fileID: 561712643051907788, guid: fdd5aa7d57b65eb4b8df25911a560792, type: 3}
     - target: {fileID: 1688002293, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
       propertyPath: playerDeathBloodSplatterPrefab
       value: 
@@ -617,6 +604,11 @@ Transform:
 --- !u!4 &5550746311299935539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 486758900, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+  m_PrefabInstance: {fileID: 5550746311484306631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6787494664227017150 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1385472831210956153, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
   m_PrefabInstance: {fileID: 5550746311484306631}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8795414465448178006 stripped

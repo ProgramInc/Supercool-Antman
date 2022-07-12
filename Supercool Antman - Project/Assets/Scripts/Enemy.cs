@@ -14,8 +14,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float movementSpeed;
     [SerializeField] Animator anim;
     public int Health;
-    [SerializeField] float minDistanceFromPlayer = 0;
-    [SerializeField] float maxDistanceFromPlayer = 5;
+    [SerializeField] float minDistanceFromPlayer;
+    /*[SerializeField] float maxDistanceFromPlayer = 5;*/
+    [SerializeField] float chargeDistance = 3;
+    [SerializeField] float chargeStopDistance = 1f;
     GameObject player;
     EnemyStates currentState;
     [SerializeField] int damage;
@@ -30,6 +32,16 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void OnEnable()
+    {
+        PlayerStats.OnPlayerDeath += SetCurrentStateToVictory;
+    }
+
+    private void OnDisable()
+    {
+        PlayerStats.OnPlayerDeath -= SetCurrentStateToVictory;
+    }
     void Start()
     {
         Health = 100;
@@ -38,8 +50,93 @@ public class Enemy : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    void KeepDistanceFromPlayer()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > chargeDistance)
+        {
+            anim.SetBool("IsCrawling", true);
+            MoveTowardsPlayer();
+        }
+        else if (Vector2.Distance(transform.position, player.transform.position) < chargeStopDistance)
+        {
+            if (GetDistanceToPlayer() < minDistanceFromPlayer)
+            {
+                anim.SetBool("IsCrawling", true);
+                moveAwayFromPlayer(); 
+            }
+            else
+            {
+                anim.SetBool("IsCrawling", false);
+                currentState = EnemyStates.Attack;
+            }
+        }
+        
+        else
+        {
+            anim.SetBool("IsCrawling", false);
+            currentState = EnemyStates.Charge;
+        }
+    }
+
+
+
     void Update()
+    {
+        transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0));
+
+        switch (currentState)
+        {
+            case EnemyStates.KeepDistanceFromPlayer:
+
+                if (CheckDeath())
+                {
+                    currentState = EnemyStates.Death;
+                    break;
+                }
+
+                KeepDistanceFromPlayer();
+                break;
+            case EnemyStates.Charge:
+
+                if (CheckDeath())
+                {
+                    currentState = EnemyStates.Death;
+                    break;
+                }
+
+
+                ChargePlayer();
+                break;
+
+            case EnemyStates.Attack:
+                if (CheckDeath())
+                {
+                    currentState = EnemyStates.Death;
+                    break;
+                }
+                else if (GetDistanceToPlayer() > chargeDistance || GetDistanceToPlayer() < minDistanceFromPlayer)
+                {
+                    currentState = EnemyStates.KeepDistanceFromPlayer;
+                    break;
+                }
+                
+                AttackPlayer();
+                currentState = EnemyStates.KeepDistanceFromPlayer;
+                break;
+
+            case EnemyStates.Death:
+                EnemyDeath();
+
+                break;
+            case EnemyStates.Victory:
+                Victory();
+                break;
+            default:
+                break;
+        }
+    }
+
+    /*void Update()
     {
 
 
@@ -80,7 +177,7 @@ public class Enemy : MonoBehaviour
                     break;
                 }
                 ChargePlayer();
-                /*print("attacking");*/
+                *//*print("attacking");*//*
                 currentState = EnemyStates.KeepDistanceFromPlayer;
                 break;
             case EnemyStates.Death:
@@ -90,7 +187,7 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-    }
+    }*/
 
     private void MoveTowardsPlayer()
     {
@@ -114,24 +211,52 @@ public class Enemy : MonoBehaviour
 
     void ChargePlayer()
     {
-        minDistanceFromPlayer = 1;
-        rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * 8));
-        anim.SetTrigger("Attack");
+        /*minDistanceFromPlayer = 1;*/
+        if (GetDistanceToPlayer() > chargeStopDistance && GetDistanceToPlayer() <= chargeDistance)
+        {
+            rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * 8));
+            anim.SetBool("IsCharging", true);
+            return;
+        }
+        else if (GetDistanceToPlayer() > chargeDistance)
+        {
+            currentState = EnemyStates.KeepDistanceFromPlayer;
+            anim.SetBool("IsCharging", false);
+            return;
+        }
+        anim.SetBool("IsCharging", false);
+        currentState = EnemyStates.Attack;
     }
 
+    private float GetDistanceToPlayer()
+    {
+        return Vector2.Distance(transform.position, player.transform.position);
+    }
+
+    void AttackPlayer()
+    {
+        anim.SetTrigger("Attack");
+        /*currentState = EnemyStates.KeepDistanceFromPlayer;*/
+    }
 
     void DoDamageToPlayer()
     {
-        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, weaponHitRadius, ~9);
-        if (playerCollider != null)
+        if (GetDistanceToPlayer()<weaponHitRadius)
         {
-            PlayerStats playerStats = playerCollider.GetComponentInChildren<PlayerStats>();
+            PlayerStats playerStats = player.GetComponentInChildren<PlayerStats>();
             if (playerStats != null)
             {
                 playerStats.ChangeHealth(-damage);
                 playerStats.InstantiateOuchCloud();
-            } 
+            }
         }
+    }
+
+    void Victory()
+    {
+        anim.SetBool("IsCrawling", false);
+        anim.SetBool("IsCharging", false);
+        anim.SetTrigger("Victory");
     }
 
     void EnemyDeath()
@@ -152,11 +277,18 @@ public class Enemy : MonoBehaviour
         Destroy(tempBloodStain, 0.7f);
         Destroy(gameObject);
     }
+
+    void SetCurrentStateToVictory()
+    {
+        currentState = EnemyStates.Victory;
+    }
 }
 
 enum EnemyStates
 {
     KeepDistanceFromPlayer,
+    Charge,
     Attack,
+    Victory,
     Death
 }
