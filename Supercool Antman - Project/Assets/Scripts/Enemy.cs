@@ -136,59 +136,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    /*void Update()
-    {
-
-
-        transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0));
-
-        switch (currentState)
-        {
-            case EnemyStates.KeepDistanceFromPlayer:
-
-                if (CheckDeath())
-                {
-                    currentState = EnemyStates.Death;
-                    break;
-                }
-
-                if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer)
-                {
-                    MoveTowardsPlayer();
-                }
-                else if (Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
-                {
-                    moveAwayFromPlayer();
-                }
-                else
-                {
-                    currentState = EnemyStates.Attack;
-                }
-                break;
-            case EnemyStates.Attack:
-                if (CheckDeath())
-                {
-                    currentState = EnemyStates.Death;
-                    break;
-                }
-                else if (Vector2.Distance(transform.position, player.transform.position) > maxDistanceFromPlayer || Vector2.Distance(transform.position, player.transform.position) < minDistanceFromPlayer)
-                {
-                    currentState = EnemyStates.KeepDistanceFromPlayer;
-                    break;
-                }
-                ChargePlayer();
-                *//*print("attacking");*//*
-                currentState = EnemyStates.KeepDistanceFromPlayer;
-                break;
-            case EnemyStates.Death:
-                EnemyDeath();
-
-                break;
-            default:
-                break;
-        }
-    }*/
-
     private void MoveTowardsPlayer()
     {
         rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed));
