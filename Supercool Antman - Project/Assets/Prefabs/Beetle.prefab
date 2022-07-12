@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -8089108032486474258, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -7694217771748202108, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9654769
@@ -524,6 +528,10 @@ PrefabInstance:
     - target: {fileID: -5446711682689755249, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 0.69500005
+      objectReference: {fileID: 0}
+    - target: {fileID: -4009866164793257930, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -3800566347842805184, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Bounds.m_Center.x
@@ -637,6 +645,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1466891664173479406, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1596357972171728719, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -741,6 +753,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5359103177601667974, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5754644500809506782, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -796,6 +812,10 @@ PrefabInstance:
     - target: {fileID: 7865728278067164518, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 0.00015944242
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361402281327924312, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8675195770551994846, guid: f0cc68e896ad0d648a728d0380e24c1f, type: 3}
       propertyPath: m_Layer

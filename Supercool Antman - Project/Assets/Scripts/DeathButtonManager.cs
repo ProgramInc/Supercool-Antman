@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DeathButtonManager : MonoBehaviour
 {
-    [SerializeField] Image restartImage;
-    [SerializeField] Image menuImage;
+    [SerializeField] GameObject buttonsPanel;
+    /*[SerializeField] Image restartImage;
+    [SerializeField] Image menuImage;*/
     [SerializeField] Button restartButton;
     [SerializeField] Button menuButton;
 
@@ -25,22 +26,23 @@ public class DeathButtonManager : MonoBehaviour
 
     private void Start()
     {
-        restartImage.enabled = false;
+        buttonsPanel.SetActive(false);
+        /*restartImage.enabled = false;
         menuImage.enabled = false;
         restartButton.enabled = false;
-        restartImage.enabled = false;
+        restartImage.enabled = false;*/
     }
 
     private IEnumerator ActivateDeathButtons()
     {
         yield return new WaitForSeconds(5);
-
-        restartImage.enabled = true;
+        buttonsPanel.SetActive(true);
+        /*restartImage.enabled = true;
         menuImage.enabled = true;
         restartButton.enabled = true;
         restartImage.enabled = true;
 
-        print("suppose to activate panel");
+        print("suppose to activate panel");*/
     }
 
     private void WrapperForActivateDeathButtons()
