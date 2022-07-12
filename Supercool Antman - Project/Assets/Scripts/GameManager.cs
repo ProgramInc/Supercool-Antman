@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,15 +7,23 @@ public class GameManager : MonoBehaviour
     public Transform topLimit;
     public Transform bottomLimit;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Animator[] onDeathAnimators;
+
+    private void OnEnable()
     {
-        
+        PlayerStats.OnPlayerDeath += Death;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        PlayerStats.OnPlayerDeath -= Death;
+    }
+
+    void Death()
+    {
+        foreach (Animator animator in onDeathAnimators)
+        {
+            animator.SetTrigger("onDeathTrigger");
+        }
     }
 }
