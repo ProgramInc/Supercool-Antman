@@ -11,6 +11,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] Image energyImage;
 
     [SerializeField] GameObject playerDeathBloodSplatterPrefab;
+    [SerializeField] GameObject ouchCloudPrefab;
+
+    [SerializeField] Transform bodyPosition;
 
     public float currentHealth;
     public float currentEnergy;
@@ -84,6 +87,11 @@ public class PlayerStats : MonoBehaviour
     public void UpdateEnergy()
     {
         energyImage.fillAmount = currentEnergy / maxEnergy;
+    }
+
+    public void InstantiateOuchCloud()
+    {
+        Instantiate(ouchCloudPrefab, bodyPosition.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(-45f, 45f)));
     }
 }
 

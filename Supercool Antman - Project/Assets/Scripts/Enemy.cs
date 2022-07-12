@@ -107,14 +107,10 @@ public class Enemy : MonoBehaviour
     {
         if (Health <= 0)
         {
-
             return true;
         }
         return false;
     }
-
-
-
 
     void ChargePlayer()
     {
@@ -127,10 +123,14 @@ public class Enemy : MonoBehaviour
     void DoDamageToPlayer()
     {
         Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, weaponHitRadius, ~9);
-        PlayerStats playerStats = playerCollider.GetComponentInChildren<PlayerStats>();
-        if (playerStats != null)
+        if (playerCollider != null)
         {
-            playerStats.ChangeHealth(-damage);
+            PlayerStats playerStats = playerCollider.GetComponentInChildren<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.ChangeHealth(-damage);
+                playerStats.InstantiateOuchCloud();
+            } 
         }
     }
 

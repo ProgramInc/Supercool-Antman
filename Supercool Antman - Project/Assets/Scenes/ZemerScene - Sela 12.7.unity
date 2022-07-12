@@ -2593,6 +2593,14 @@ PrefabInstance:
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 1088924699}
+    - target: {fileID: 5550746309814135346, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
+      propertyPath: bodyPosition
+      value: 
+      objectReference: {fileID: 2005002942777365015}
+    - target: {fileID: 5550746309814135346, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
+      propertyPath: ouchCloudPrefab
+      value: 
+      objectReference: {fileID: 561712643051907788, guid: fdd5aa7d57b65eb4b8df25911a560792, type: 3}
     - target: {fileID: 5550746310310897177, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
       propertyPath: reticle
       value: 
@@ -2661,6 +2669,11 @@ MonoBehaviour:
 --- !u!1 &2005002942777365014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5550746310843971292, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
+  m_PrefabInstance: {fileID: 2005002942777365012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2005002942777365015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6787494664227017150, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
   m_PrefabInstance: {fileID: 2005002942777365012}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8432666859165355137
