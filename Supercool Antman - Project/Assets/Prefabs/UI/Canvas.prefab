@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 866814277}
   - component: {fileID: 866814276}
   - component: {fileID: 866814279}
+  - component: {fileID: 2532029525314459725}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -297,6 +298,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2532029525314459725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866814274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8ad2164c2dda44da8dc9cb0da7e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3396416042153878615
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +321,7 @@ GameObject:
   - component: {fileID: 3187875536087949120}
   - component: {fileID: 5243182715066070069}
   - component: {fileID: 1682384704303091277}
+  - component: {fileID: 1409806462}
   m_Layer: 5
   m_Name: Buttons Panel
   m_TagString: Untagged
@@ -375,6 +389,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1409806462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396416042153878615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a54366859e986d4390d8650c0386d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartImage: {fileID: 380693685}
+  menuImage: {fileID: 866814277}
+  restartButton: {fileID: 380693684}
+  menuButton: {fileID: 866814276}
 --- !u!1 &5753064779281484477
 GameObject:
   m_ObjectHideFlags: 0
