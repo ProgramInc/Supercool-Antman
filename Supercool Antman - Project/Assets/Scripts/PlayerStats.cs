@@ -15,6 +15,9 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] Transform bodyPosition;
 
+    public delegate void PlayerDeathAction();
+    public static event PlayerDeathAction OnPlayerDeath;
+
     public float currentHealth;
     public float currentEnergy;
     public bool isAlive = true;
@@ -62,6 +65,7 @@ public class PlayerStats : MonoBehaviour
         print("you are dead");
         isAlive = false;
         Instantiate(playerDeathBloodSplatterPrefab, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
+        OnPlayerDeath?.Invoke();
         Destroy(gameObject);
     }
 
