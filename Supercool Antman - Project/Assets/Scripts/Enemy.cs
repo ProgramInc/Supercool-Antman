@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
@@ -45,7 +46,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
-        Health = 100;
+        Health = gameManager.GetComponent<EnemyManager>().beetleHealth;
         currentState = EnemyStates.KeepDistanceFromPlayer;
         player = FindObjectOfType<PlayerInput>().gameObject;
 
