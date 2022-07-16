@@ -399,11 +399,6 @@ MonoBehaviour:
   isOnWallRight: 0
   isOnFloor: 0
   isOnCeiling: 0
---- !u!1 &124842380 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3396416042153878615, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-  m_PrefabInstance: {fileID: 89328421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &153754202
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,17 +779,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 615988975, guid: c756633fbb1dff24597b603e264300e6, type: 3}
   m_PrefabInstance: {fileID: 1190925755}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &628337226 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 866814276, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-  m_PrefabInstance: {fileID: 89328421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &748413223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 748413223, guid: c756633fbb1dff24597b603e264300e6, type: 3}
@@ -812,14 +796,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3702948379513548623, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
-      propertyPath: m_SortingOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702948380325242704, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
-      propertyPath: m_SortingOrder
-      value: 21
-      objectReference: {fileID: 0}
     - target: {fileID: 3702948380476442658, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -867,14 +843,6 @@ PrefabInstance:
     - target: {fileID: 3702948380476442659, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
       propertyPath: m_Name
       value: Death Screen Stuff
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702948380690453256, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
-      propertyPath: m_SortingOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702948380948311387, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
-      propertyPath: m_SortingOrder
-      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
@@ -1255,42 +1223,11 @@ CircleCollider2D:
   m_Offset: {x: 0.1, y: -0.02}
   serializedVersion: 2
   m_Radius: 1.72
---- !u!114 &1509773453 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 380693684, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-  m_PrefabInstance: {fileID: 89328421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1539336503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1539336503, guid: c756633fbb1dff24597b603e264300e6, type: 3}
   m_PrefabInstance: {fileID: 1190925755}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1714757392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5753064779281484477, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-  m_PrefabInstance: {fileID: 89328421}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1714757397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714757392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a54366859e986d4390d8650c0386d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonsPanel: {fileID: 124842380}
-  restartButton: {fileID: 1509773453}
-  menuButton: {fileID: 628337226}
 --- !u!95 &1724332708 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3702948379513548656, guid: fd4801d2cc09f494d9bf6a74a3fb1247, type: 3}
@@ -1612,18 +1549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
-      propertyPath: m_Color.b
-      value: 0.14012098
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
-      propertyPath: m_Color.g
-      value: 0.14012098
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432666859011105294, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9056604
-      objectReference: {fileID: 0}
     - target: {fileID: 8432666859011105295, guid: d5db554ffeb37bc4682ff58164bc3cda, type: 3}
       propertyPath: m_Name
       value: Reticle
