@@ -14,6 +14,7 @@ public class EnemyWeapons : MonoBehaviour
         {
             other.gameObject.GetComponentInChildren<PlayerStats>().ChangeHealth(-damage);
             Instantiate(ouchCloudPrefab, other.gameObject.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45)));
+            PlayerStats.OnPlayerWasHit?.Invoke();
             Destroy(gameObject);
             /*print(other.gameObject.GetComponentInChildren<PlayerStats>().currentHealth + "  Current player health ");*//*
         }

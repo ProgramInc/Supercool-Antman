@@ -9,6 +9,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject impactPrefab;
     [SerializeField] float weaponHitRadius;
     [SerializeField] Transform weaponTip;
+
+    public delegate void EnemyWasHitAction();
+    public static EnemyWasHitAction OnEnemyWasHit;
+
+    public delegate void SwordSwooshAction();
+    public static SwordSwooshAction OnSwordSwoosh;
+    public delegate void LightSaberSwooshAction();
+    public static LightSaberSwooshAction OnLightSaberSwoosh;
+
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
         print(gameObject.name + " hit" + collision.name);
@@ -45,6 +54,7 @@ public class Weapon : MonoBehaviour
                 beetle.Health -= Damage;
                 GetComponentInParent<WeaponEffect>().TriggerZoom();
                 Instantiate(impactPrefab, beetle.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
+                OnEnemyWasHit?.Invoke();
             }
             else
             {
@@ -54,13 +64,23 @@ public class Weapon : MonoBehaviour
                     Mantis.Health -= Damage;
                     GetComponentInParent<WeaponEffect>().TriggerZoom();
                     Instantiate(impactPrefab, Mantis.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
+                    OnEnemyWasHit?.Invoke();
                 }
             }
         }
     }
 
-   /* private void OnDrawGizmos()
+    void SwordSwoosh()
     {
-        Gizmos.DrawSphere(weaponTip.position, weaponHitRadius);
-    }*/
+        OnSwordSwoosh?.Invoke();
+    }
+    void LightSaberSwoosh()
+    {
+        OnLightSaberSwoosh?.Invoke();
+    }
+
+    /* private void OnDrawGizmos()
+     {
+         Gizmos.DrawSphere(weaponTip.position, weaponHitRadius);
+     }*/
 }

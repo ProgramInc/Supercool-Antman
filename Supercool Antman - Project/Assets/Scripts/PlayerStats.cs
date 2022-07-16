@@ -16,6 +16,10 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] Transform bodyPosition;
 
+
+    public delegate void PlayerWasHitAction();
+    public static PlayerWasHitAction OnPlayerWasHit;
+
     public delegate void PlayerDeathAction();
     public static event PlayerDeathAction OnPlayerDeath;
 

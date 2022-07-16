@@ -196,6 +196,7 @@ public class Beetle : MonoBehaviour
             {
                 playerStats.ChangeHealth(-damage);
                 playerStats.InstantiateOuchCloud();
+                PlayerStats.OnPlayerWasHit?.Invoke();
             }
         }
     }
