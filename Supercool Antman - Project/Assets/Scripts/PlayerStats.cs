@@ -16,6 +16,11 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] Transform bodyPosition;
 
+    public delegate void CollectLifeAction();
+    public static CollectLifeAction OnLifeCollcted;
+
+    public delegate void CollectedEnergyAction();
+    public static CollectedEnergyAction OnEnergyColleted;
 
     public delegate void PlayerWasHitAction();
     public static PlayerWasHitAction OnPlayerWasHit;
@@ -53,6 +58,10 @@ public class PlayerStats : MonoBehaviour
 
     public void ChangeHealth(float value)
     {
+        if (value > 0)
+        {
+            OnLifeCollcted?.Invoke();
+        }
         currentHealth += value;
         if (currentHealth < 0)
         {
@@ -77,6 +86,10 @@ public class PlayerStats : MonoBehaviour
 
     public void ChangeEnergy(float value)
     {
+        if (value > 0)
+        {
+            OnEnergyColleted?.Invoke();
+        }
         currentEnergy += value;
         if (currentEnergy < 0)
         {
