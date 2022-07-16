@@ -958,7 +958,6 @@ MonoBehaviour:
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
   - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
   weaponHitRadius: 3
-  deathCounterText: {fileID: 0}
 --- !u!114 &1998701485
 MonoBehaviour:
   m_ObjectHideFlags: 0
