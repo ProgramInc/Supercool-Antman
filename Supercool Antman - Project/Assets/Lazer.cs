@@ -7,6 +7,7 @@ public class Lazer : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] GameObject lazerImpactPrefab;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Beetle>())

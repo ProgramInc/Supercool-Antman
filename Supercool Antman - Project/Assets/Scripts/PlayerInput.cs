@@ -28,6 +28,9 @@ public class PlayerInput : MonoBehaviour
     public bool IsAttacking;
     public bool isShooting;
 
+    public delegate void FLipAction();
+    public static FLipAction OnFLip;
+
     private void Awake()
     {
         cam = Camera.main;
@@ -165,6 +168,7 @@ public class PlayerInput : MonoBehaviour
             if (isGrounded || isWalled)
             {
                 Physics2D.gravity = -Physics2D.gravity;
+                OnFLip?.Invoke();
             }
         }
     }

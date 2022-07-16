@@ -22,6 +22,14 @@ public class PlayerAnimatorController : MonoBehaviour
     [SerializeField] GameObject fadingAttackPrefab;
     [SerializeField] Weapon[] weapons;
 
+    public delegate void LazerShootAction();
+    public static LazerShootAction OnLazerShot;
+
+    public delegate void SwordSwooshAction();
+    public SwordSwooshAction OnSwordSwoosh;
+
+    public delegate void LightSaberSwooshAction();
+    public SwordSwooshAction OnLightSaberSwoosh;
 
     private void Awake()
     {
@@ -34,11 +42,17 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetBool("IsWalking", playerInput.isWalking);
         if (playerInput.IsAttacking)
         {
-            animator.SetTrigger("IsAttacking");
-            playerInput.IsAttacking = false;
-            if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+            if (playerStats.currentWeapon == PlayerWeaponTypes.Sword)
             {
-                
+                animator.SetTrigger("IsAttacking");
+                OnSwordSwoosh?.Invoke();
+                playerInput.IsAttacking = false; 
+            }
+            else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+            {
+                animator.SetTrigger("IsAttacking");
+                OnLightSaberSwoosh?.Invoke();
+                playerInput.IsAttacking = false;
                 if (playerStats.currentEnergy <= 0)
                 {
                     print(playerStats.currentEnergy);
@@ -97,6 +111,7 @@ public class PlayerAnimatorController : MonoBehaviour
         Rigidbody2D bottomLazer = Instantiate(lazerPrefab, bottomLazerPoint.position, Quaternion.Euler(0, 0, zRotationBottomLazer + 90)).GetComponent<Rigidbody2D>();
         /*topLazer.AddForce((playerInput.mousePosition - (Vector2)transform.position).normalized * lazerSpeed, ForceMode2D.Impulse);*/
         bottomLazer.AddForce((reticle.position - bottomLazerPoint.position).normalized * lazerSpeed, ForceMode2D.Impulse);
+        OnLazerShot?.Invoke();
     }
 
     void SendDoDamageMessageToWeapon()

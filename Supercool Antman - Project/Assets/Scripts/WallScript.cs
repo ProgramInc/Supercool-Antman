@@ -8,6 +8,9 @@ public class WallScript : MonoBehaviour
     [SerializeField] Vector3 rotationAfterCollision;
     PlayerInput playerInput;
 
+    public delegate void PlayerLandAction();
+    public static PlayerLandAction OnPlayerLand;
+
     private void Awake()
     {
         playerInput = FindObjectOfType<PlayerInput>();
@@ -20,7 +23,7 @@ public class WallScript : MonoBehaviour
             collision.collider.GetComponentInParent<Rigidbody2D>().transform.rotation = Quaternion.Euler(rotationAfterCollision);
             Physics2D.gravity = downDirection;
             playerInput.currentRotation = rotationAfterCollision;
-            
+            OnPlayerLand?.Invoke();
         }
     }
 }

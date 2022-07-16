@@ -817,7 +817,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0000755cfd6ec9f4f96651d7f69ebace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDeathSound: {fileID: 0}
+  enemyDeathSound: []
+  lazerSound: {fileID: 8300000, guid: c575f02e547885e4ca2f775992524622, type: 3}
+  ouchSound: []
+  swordWhoosh: []
+  lightSaberSwoosh: []
+  swordHit: []
+  lightSaberHit: []
+  JumpSound:
+  - {fileID: 8300000, guid: e7ed7c7354f739043b0c969c2183a922, type: 3}
+  landingSound: []
 --- !u!4 &595901095
 Transform:
   m_ObjectHideFlags: 0
