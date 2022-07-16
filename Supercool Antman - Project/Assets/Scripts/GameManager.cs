@@ -11,28 +11,35 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Animator[] onDeathAnimators;
     public TextMeshProUGUI beetleTextField;
+    public TextMeshProUGUI mantisTextField;
 
-    public int beetleDeathCounterInteger = 0;
-
+    private int beetleDeathCounterInteger;
+    private int mantisDeathCounterInteger;
 
     private void OnEnable()
     {
         PlayerStats.OnPlayerDeath += Death;
-        Enemy.OnEnemyDeath += UpdateDeathCounter;
+        Enemy.OnEnemyDeath += UpdateBeetleDeathCounter;
     }
 
 
     private void OnDisable()
     {
         PlayerStats.OnPlayerDeath -= Death;
-        Enemy.OnEnemyDeath -= UpdateDeathCounter;
+        Enemy.OnEnemyDeath -= UpdateBeetleDeathCounter;
     }
 
 
-    private void UpdateDeathCounter()
+    private void UpdateBeetleDeathCounter()
     {
         beetleDeathCounterInteger++;
         beetleTextField.text = beetleDeathCounterInteger.ToString();
+    }
+
+    private void UpdateMantisDeathCounter()
+    {
+        mantisDeathCounterInteger++;
+        mantisTextField.text = mantisDeathCounterInteger.ToString();
     }
 
 
