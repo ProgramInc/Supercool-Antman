@@ -36,14 +36,17 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        GroundCheck();
-        IsThePlayerWalking();
-        Flip();
-        OrientPlayer();
-        CheckForAttacks();
-        CheckForShooting();
-        DrawSword();
-        DrawLightSaber();
+        if (playerStats.isAlive)
+        {
+            GroundCheck();
+            IsThePlayerWalking();
+            Flip();
+            OrientPlayer();
+            CheckForAttacks();
+            CheckForShooting();
+            DrawSword();
+            DrawLightSaber(); 
+        }
     }
 
     private void CheckForShooting()

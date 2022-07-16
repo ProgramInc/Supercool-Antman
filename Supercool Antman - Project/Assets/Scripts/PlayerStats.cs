@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -65,6 +66,7 @@ public class PlayerStats : MonoBehaviour
         print("you are dead");
         isAlive = false;
         Instantiate(playerDeathBloodSplatterPrefab, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
+        GetComponentInParent<Light2D>().enabled = false;
         OnPlayerDeath?.Invoke();
         Destroy(gameObject);
     }
