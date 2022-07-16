@@ -94,11 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3830421216393776715}
   - component: {fileID: 234048594852681972}
-  - component: {fileID: 234048594852681979}
   - component: {fileID: 3830421216393776712}
   - component: {fileID: 898809858090693631}
+  - component: {fileID: -3578026555022788160}
   m_Layer: 8
-  m_Name: Mantis
+  m_Name: Mantis OLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,25 +147,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.518454, y: 8.228936}
   m_EdgeRadius: 0
---- !u!114 &234048594852681979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729315624459048488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 0.01
-  anim: {fileID: 0}
-  Health: 0
-  minDistanceFromPlayer: 0.5
-  maxDistanceFromPlayer: 3
-  damage: 5
-  pickupDropChance: 5
 --- !u!95 &3830421216393776712
 Animator:
   serializedVersion: 4
@@ -207,6 +188,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-3578026555022788160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729315624459048488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300f1c151dba5444db6ff5311b2532c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.02
+  anim: {fileID: 0}
+  Health: 0
+  minDistanceFromPlayer: 0
+  chargeDistance: 3
+  chargeStopDistance: 1
+  damage: 0
+  pickupDropChance: 10
+  bloodSplatterArray:
+  - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
+  - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
+  - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
+  weaponHitRadius: 0
+  handsLocation: {fileID: 0}
+  maxWalkDistance: 0
+  mantisHandsPrefab: {fileID: 0}
+  mantisProjectileSpeed: 0
 --- !u!1 &3339268273054025334
 GameObject:
   m_ObjectHideFlags: 0

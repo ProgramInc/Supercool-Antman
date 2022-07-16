@@ -17,12 +17,14 @@ public class EnemyManager : MonoBehaviour
     private void OnEnable()
     {
         Enemy.OnEnemyDeath += UpdateBeetleDeathCounter;
+        Enemy.OnEnemyDeath += UpdateMantisDeathCounter;
         Enemy.OnEnemyDeath += IncrementEnemyHealth;
     }
 
     private void OnDisable()
     {
         Enemy.OnEnemyDeath -= UpdateBeetleDeathCounter;
+        Enemy.OnEnemyDeath -= UpdateMantisDeathCounter;
         Enemy.OnEnemyDeath -= IncrementEnemyHealth;
     }
 
