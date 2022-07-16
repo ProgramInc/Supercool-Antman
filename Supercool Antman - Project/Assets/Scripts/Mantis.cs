@@ -7,30 +7,31 @@ public class Mantis : MonoBehaviour
 {
     GameManager gameManager;
 
+    [Range(0.01f, 0.2f)]
+    [SerializeField] float mantisStopDistance;
     [SerializeField] float movementSpeed;
     [SerializeField]Animator anim;
-    public int Health;
-    [SerializeField] float mantisMinWalkDistance;
-
-    [SerializeField] float chargeDistance = 3;
-    [SerializeField] float chargeStopDistance = 1f;
-    GameObject player;
-    MantisStates currentState;
-    [SerializeField] int damage;
-    [SerializeField] int pickupDropChance;
-    [SerializeField] GameObject[] bloodSplatterArray;
-    GameObject tempBloodStain;
-    int bloodSplattersInstantiated;
+    [SerializeField] Transform bodyRootRotation;
+    [SerializeField] GameObject mantisHandsPrefab;
+    [SerializeField] float mantisProjectileSpeed;
     [SerializeField] float weaponHitRadius;
     [SerializeField] Transform handsLocation;
     [SerializeField] float maxWalkDistance;
-    Vector3[] positions = new Vector3[2];
-    [SerializeField] GameObject mantisHandsPrefab;
-    [SerializeField] float mantisProjectileSpeed;
-    [Range(0.01f, 0.2f)]
-    [SerializeField] float mantisStopDistance;
-    Rigidbody2D rb;
-    [SerializeField] Transform bodyRootRotation;
+    [SerializeField] int damage;
+    [SerializeField] int pickupDropChance;
+    [SerializeField] GameObject[] bloodSplatterArray;
+    [SerializeField] float chargeDistance = 3;
+    [SerializeField] float chargeStopDistance = 1f;
+    [SerializeField] float mantisMinWalkDistance;
+
+    public int Health;
+
+    private GameObject player;
+    private MantisStates currentState;
+    private GameObject tempBloodStain;
+    private int bloodSplattersInstantiated;
+    private Vector3[] positions = new Vector3[2];
+    private Rigidbody2D rb;
     
 
     private void ChooseRandomPosition()

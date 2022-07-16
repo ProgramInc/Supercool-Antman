@@ -5,10 +5,10 @@ public class WeaponEffect : MonoBehaviour
     /*[SerializeField] GameObject swordImpactPrefab;*/
     /*[SerializeField] Weapon weapon;*/
     [SerializeField] Animator cameraAnimator;
+    [SerializeField] float zoomCooldown = 0.5f;
 
     /*private bool isAlreadyInstantiated;*/
     private bool isAlreadyZooming;
-    private float zoomCooldown = 0.5f;
     private float timeSinceLastZoom;
 
     private void Start()
