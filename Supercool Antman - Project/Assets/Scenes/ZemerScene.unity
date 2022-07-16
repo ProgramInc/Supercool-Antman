@@ -817,16 +817,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0000755cfd6ec9f4f96651d7f69ebace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDeathSound: []
+  enemyDeathSound:
+  - {fileID: 8300000, guid: b44584dec399ff240b02a0e5954d94f1, type: 3}
+  - {fileID: 8300000, guid: f3259f12d7b1e9f47857253c71ec71cd, type: 3}
+  - {fileID: 8300000, guid: bf4f903ea1fa691459fbf4c85d6efcc4, type: 3}
   lazerSound: {fileID: 8300000, guid: c575f02e547885e4ca2f775992524622, type: 3}
-  ouchSound: []
-  swordWhoosh: []
-  lightSaberSwoosh: []
-  swordHit: []
+  ouchSound:
+  - {fileID: 8300000, guid: 16c53b4490c72364f9cf741b2b39a403, type: 3}
+  - {fileID: 8300000, guid: 9d6d6cd82a0ef8b4abda64bc076d6090, type: 3}
+  - {fileID: 8300000, guid: 8d5af4135c5fe3943993c10491217e6d, type: 3}
+  swordWhoosh:
+  - {fileID: 8300000, guid: 937ea1eb28be10c438075d98e09c2fd9, type: 3}
+  - {fileID: 8300000, guid: 7b5dd513a30f24544a6c4d220fef6ed5, type: 3}
+  - {fileID: 8300000, guid: 43f636571010c674c81be0a05de2c646, type: 3}
+  lightSaberSwoosh:
+  - {fileID: 8300000, guid: c1458172a0b0f2d4ebfb722f3d76f884, type: 3}
+  - {fileID: 8300000, guid: 665a03ddfd3638244aeaf66d6f390af5, type: 3}
+  - {fileID: 8300000, guid: 10af1d2fe0d107447b7635551bc734de, type: 3}
+  swordHit:
+  - {fileID: 8300000, guid: ef114ae6279c94f42bf75ac703b27618, type: 3}
+  - {fileID: 8300000, guid: 5b9769f62ef73f946bfa7c8d4f875835, type: 3}
+  - {fileID: 8300000, guid: cd17ab0bc3651ac459aaa07c35bbe5ed, type: 3}
+  - {fileID: 8300000, guid: ae8689a2c5a540b4f9aaebef0ff5721c, type: 3}
+  - {fileID: 8300000, guid: aaa6d6f28acdc7546a6aa6949ee4f8f0, type: 3}
+  - {fileID: 8300000, guid: 2793e80ce43861f4ab63819d77b28f2f, type: 3}
   lightSaberHit: []
   JumpSound:
-  - {fileID: 8300000, guid: e7ed7c7354f739043b0c969c2183a922, type: 3}
-  landingSound: []
+  - {fileID: 8300000, guid: 9198aa42ca32d424c9f0c9e5662255d6, type: 3}
+  - {fileID: 8300000, guid: 01ce876e3df6aa44ba290bc6c9f59183, type: 3}
+  - {fileID: 8300000, guid: 3f46f1864b019a946bc688566e7dc955, type: 3}
+  landingSound:
+  - {fileID: 8300000, guid: c325352e4bb0e6e42b3087f2c9222db7, type: 3}
+  - {fileID: 8300000, guid: 29a65f1879dcd9d44933cba7ca23e05b, type: 3}
+  chewSounds:
+  - {fileID: 8300000, guid: 3a25021bebb189241aa1302ede72635a, type: 3}
+  - {fileID: 8300000, guid: 70360c74f18964d4cb51532fa8c87bd5, type: 3}
+  - {fileID: 8300000, guid: f3136235956605a47a71234924542f25, type: 3}
+  energyCollectedSounds:
+  - {fileID: 8300000, guid: 340a946ef143c1044a8102a2a867dd85, type: 3}
+  - {fileID: 8300000, guid: 057d5f441a598bb4882a11e276058916, type: 3}
 --- !u!4 &595901095
 Transform:
   m_ObjectHideFlags: 0
@@ -973,8 +1002,8 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
   - {fileID: 5996440795664401264, guid: 43a34cb05d69b4a409055650b950c603, type: 3}
-  minSpawnTime: 0.5
-  maxSpawnTime: 3
+  minSpawnTime: 2
+  maxSpawnTime: 5
 --- !u!4 &1039474287
 Transform:
   m_ObjectHideFlags: 0
@@ -1791,7 +1820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2122353593
 AudioSource:
   m_ObjectHideFlags: 0

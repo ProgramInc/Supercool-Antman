@@ -70,8 +70,6 @@ public class Mantis : MonoBehaviour
         player = FindObjectOfType<PlayerInput>().gameObject;
         positions[0] = transform.position;
         ChooseRandomPosition();
-        print(positions[0]);
-        print(positions[1]);
         /*ValidateRandomPosition();*/
     }
 
@@ -96,7 +94,6 @@ public class Mantis : MonoBehaviour
 
     void Update()
     {
-        print(player.name);
         transform.rotation = (transform.position.x < player.transform.position.x ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0));
 
         switch (currentState)

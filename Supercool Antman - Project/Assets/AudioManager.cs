@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip[] lightSaberHit;
     [SerializeField] AudioClip[] JumpSound;
     [SerializeField] AudioClip[] landingSound;
+    [SerializeField] AudioClip[] chewSounds;
+    [SerializeField] AudioClip[] energyCollectedSounds;
 
 
 
@@ -27,10 +29,12 @@ public class AudioManager : MonoBehaviour
         PlayerStats.OnPlayerWasHit += PlayOuchSound;
         PlayerAnimatorController.OnLazerShot += PlayLazerSound;
         Weapon.OnEnemyWasHit += PlaySwordHitSound;
-        Weapon.OnSwordSwoosh += PlaySwordWhooshSound;
-        Weapon.OnLightSaberSwoosh += PlayLightSaberWhooshSound;
+        PlayerAnimatorController.OnSwordSwoosh += PlaySwordWhooshSound;
+        PlayerAnimatorController.OnLightSaberSwoosh += PlayLightSaberWhooshSound;
         PlayerInput.OnFLip += PlayJumpSound;
         WallScript.OnPlayerLand += PlayLandingSound;
+        PlayerStats.OnLifeCollcted += PlayChewingSound;
+        PlayerStats.OnEnergyColleted += PlayEnergyCollectedSound;
     }
     private void OnDisable()
     {
@@ -38,10 +42,12 @@ public class AudioManager : MonoBehaviour
         PlayerStats.OnPlayerWasHit -= PlayOuchSound;
         PlayerAnimatorController.OnLazerShot -= PlayLazerSound;
         Weapon.OnEnemyWasHit -= PlaySwordHitSound;
-        Weapon.OnSwordSwoosh -= PlaySwordWhooshSound;
-        Weapon.OnLightSaberSwoosh -= PlayLightSaberWhooshSound;
+        PlayerAnimatorController.OnSwordSwoosh -= PlaySwordWhooshSound;
+        PlayerAnimatorController.OnLightSaberSwoosh -= PlayLightSaberWhooshSound;
         PlayerInput.OnFLip -= PlayJumpSound;
         WallScript.OnPlayerLand -= PlayLandingSound;
+        PlayerStats.OnLifeCollcted -= PlayChewingSound;
+        PlayerStats.OnEnergyColleted -= PlayEnergyCollectedSound;
     }
 
     void PlayEnemyDeathSound(int unused)
@@ -61,6 +67,7 @@ public class AudioManager : MonoBehaviour
 
     void PlaySwordWhooshSound()
     {
+        print("plating swoosh");
         audioSource.PlayOneShot(swordWhoosh[Random.Range(0,swordWhoosh.Length)]);
     }
     void PlayLightSaberWhooshSound()
@@ -83,5 +90,15 @@ public class AudioManager : MonoBehaviour
     void PlayLandingSound()
     {
         audioSource.PlayOneShot(landingSound[Random.Range(0, landingSound.Length)]);
+    }
+
+    void PlayChewingSound()
+    {
+        audioSource.PlayOneShot(chewSounds[Random.Range(0, chewSounds.Length)]);
+    }
+
+    void PlayEnergyCollectedSound()
+    {
+        audioSource.PlayOneShot(energyCollectedSounds[Random.Range(0, energyCollectedSounds.Length)]);
     }
 }

@@ -13,10 +13,11 @@ public class Weapon : MonoBehaviour
     public delegate void EnemyWasHitAction();
     public static EnemyWasHitAction OnEnemyWasHit;
 
-    public delegate void SwordSwooshAction();
+    /*public delegate void SwordSwooshAction();
     public static SwordSwooshAction OnSwordSwoosh;
+
     public delegate void LightSaberSwooshAction();
-    public static LightSaberSwooshAction OnLightSaberSwoosh;
+    public static LightSaberSwooshAction OnLightSaberSwoosh;*/
 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,7 +71,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void SwordSwoosh()
+/*    void SwordSwoosh()
     {
         OnSwordSwoosh?.Invoke();
     }
@@ -78,7 +79,7 @@ public class Weapon : MonoBehaviour
     {
         OnLightSaberSwoosh?.Invoke();
     }
-
+*/
     /* private void OnDrawGizmos()
      {
          Gizmos.DrawSphere(weaponTip.position, weaponHitRadius);

@@ -26,10 +26,10 @@ public class PlayerAnimatorController : MonoBehaviour
     public static LazerShootAction OnLazerShot;
 
     public delegate void SwordSwooshAction();
-    public SwordSwooshAction OnSwordSwoosh;
+    public static SwordSwooshAction OnSwordSwoosh;
 
     public delegate void LightSaberSwooshAction();
-    public SwordSwooshAction OnLightSaberSwoosh;
+    public static LightSaberSwooshAction OnLightSaberSwoosh;
 
     private void Awake()
     {
@@ -46,6 +46,7 @@ public class PlayerAnimatorController : MonoBehaviour
             {
                 animator.SetTrigger("IsAttacking");
                 OnSwordSwoosh?.Invoke();
+                print("invoked");
                 playerInput.IsAttacking = false; 
             }
             else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
