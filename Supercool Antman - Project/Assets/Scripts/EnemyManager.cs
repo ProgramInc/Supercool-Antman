@@ -5,8 +5,10 @@ using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
-    public TextMeshProUGUI beetleTextField;
-    public TextMeshProUGUI mantisTextField;
+    public delegate void EnemyDeathAction(int enemyNumber);
+    public static EnemyDeathAction OnEnemyDeath;
+
+    public TextMeshProUGUI[] enemyDeathCountersText;
 
     private int beetleDeathCounterInteger;
     private int mantisDeathCounterInteger;
@@ -16,16 +18,16 @@ public class EnemyManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Enemy.OnEnemyDeath += UpdateBeetleDeathCounter;
-        Enemy.OnEnemyDeath += UpdateMantisDeathCounter;
-        Enemy.OnEnemyDeath += IncrementEnemyHealth;
+        OnEnemyDeath += UpdateBeetleDeathCounter;
+        OnEnemyDeath += UpdateMantisDeathCounter;
+/*        OnEnemyDeath += IncrementEnemyHealth;*/
     }
 
     private void OnDisable()
     {
-        Enemy.OnEnemyDeath -= UpdateBeetleDeathCounter;
-        Enemy.OnEnemyDeath -= UpdateMantisDeathCounter;
-        Enemy.OnEnemyDeath -= IncrementEnemyHealth;
+        OnEnemyDeath -= UpdateBeetleDeathCounter;
+        OnEnemyDeath -= UpdateMantisDeathCounter;
+/*        OnEnemyDeath -= IncrementEnemyHealth;*/
     }
 
     private void Start()
@@ -39,15 +41,15 @@ public class EnemyManager : MonoBehaviour
         mantisHealth = 100 + mantisDeathCounterInteger;
     }
 
-    private void UpdateBeetleDeathCounter()
+    private void UpdateBeetleDeathCounter(int enemyNumber)
     {
         beetleDeathCounterInteger++;
-        beetleTextField.text = beetleDeathCounterInteger.ToString();
+        enemyDeathCountersText[enemyNumber].text = beetleDeathCounterInteger.ToString();
     }
 
-    private void UpdateMantisDeathCounter()
+    private void UpdateMantisDeathCounter(int enemyNumber)
     {
         mantisDeathCounterInteger++;
-        mantisTextField.text = mantisDeathCounterInteger.ToString();
+        enemyDeathCountersText[enemyNumber].text = mantisDeathCounterInteger.ToString();
     }
 }

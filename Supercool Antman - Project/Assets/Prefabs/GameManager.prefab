@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8427987154207090753}
   - component: {fileID: 8427987154207090759}
   - component: {fileID: 8427987154207090756}
-  - component: {fileID: 8427987154207090757}
+  - component: {fileID: 8427987154360840732}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MonoBehaviour:
   pickupPrefabs:
   - {fileID: 7168743025977858026, guid: 243ba4a9a1109414eb91c28b87aab21a, type: 3}
   - {fileID: 4467602715854250019, guid: e2828b14781de9e4087b40195cbc30ff, type: 3}
---- !u!114 &8427987154207090757
+--- !u!114 &8427987154360840732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa980c7cf6d42a42b35099536c5819e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beetleTextField: {fileID: 0}
-  mantisTextField: {fileID: 0}
+  enemyDeathCountersText:
+  - {fileID: 0}
+  - {fileID: 0}
   beetleHealth: 0
   mantisHealth: 0

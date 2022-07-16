@@ -38,7 +38,7 @@ public class PlayerAnimatorController : MonoBehaviour
             playerInput.IsAttacking = false;
             if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
             {
-                playerStats.ChangeEnergy(-5);
+                
                 if (playerStats.currentEnergy <= 0)
                 {
                     print(playerStats.currentEnergy);
@@ -51,12 +51,23 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             if (playerStats.currentEnergy > 0)
             {
-                playerStats.ChangeEnergy(-10);
                 animator.SetTrigger("IsShooting");
             }
         }
     }
 
+    void DecreaseEnergyByLightsaber()
+    {
+        if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+        {
+            playerStats.ChangeEnergy(-5); 
+        }
+    }    
+    
+    void DecreaseEnergyByLazer()
+    {
+        playerStats.ChangeEnergy(-10);
+    }
 
     private void LateUpdate()
     {

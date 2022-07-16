@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         
         foreach (Collider2D enemyCollider in enemiesInRange)
         {
-            Enemy enemy = enemyCollider.GetComponent<Enemy>();
+            Beetle enemy = enemyCollider.GetComponent<Beetle>();
             if (enemy != null)
             {
                 enemy.Health -= Damage;
