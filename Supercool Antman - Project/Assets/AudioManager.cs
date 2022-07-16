@@ -13,15 +13,15 @@ public class AudioManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        Enemy.OnEnemyDeath += PlayEnemyDeathSound;
+        EnemyManager.OnEnemyDeath += PlayEnemyDeathSound;
     }
 
     private void OnDisable()
     {
-        Enemy.OnEnemyDeath -= PlayEnemyDeathSound;
+        EnemyManager.OnEnemyDeath -= PlayEnemyDeathSound;
     }
 
-    void PlayEnemyDeathSound()
+    void PlayEnemyDeathSound(int unused)
     {
         audioSource.PlayOneShot(enemyDeathSound);
     }

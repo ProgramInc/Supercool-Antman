@@ -4,11 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Enemy : MonoBehaviour
+public class Beetle : MonoBehaviour
 {
-    public delegate void EnemyDeathAction();
-    public static EnemyDeathAction OnEnemyDeath;
-
     GameManager gameManager;
     Vector3 nextTarget;
     bool hasTarget;
@@ -222,7 +219,7 @@ public class Enemy : MonoBehaviour
             bloodSplattersInstantiated += 1;
         }
 
-        OnEnemyDeath?.Invoke();
+        EnemyManager.OnEnemyDeath?.Invoke(0);
         Destroy(tempBloodStain, 0.7f);
         Destroy(gameObject);
     }

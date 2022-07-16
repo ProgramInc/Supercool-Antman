@@ -8,14 +8,18 @@ public class Lazer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>())
+        if (collision.GetComponent<Beetle>())
         {
             print(collision.name);
-            collision.GetComponent<Enemy>().Health -= damage;
+            collision.GetComponent<Beetle>().Health -= damage;
         }
         else if (collision.GetComponent<Mantis>())
         {
             collision.GetComponent<Mantis>().Health -= damage;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

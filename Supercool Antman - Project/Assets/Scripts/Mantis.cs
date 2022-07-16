@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Mantis : MonoBehaviour
 {
-    public delegate void EnemyDeathAction();
-    public static EnemyDeathAction OnEnemyDeath;
-
     GameManager gameManager;
 
     [SerializeField] float movementSpeed;
@@ -195,7 +192,7 @@ public class Mantis : MonoBehaviour
             bloodSplattersInstantiated += 1;
         }
 
-        OnEnemyDeath?.Invoke();
+        EnemyManager.OnEnemyDeath?.Invoke(1);
         Destroy(tempBloodStain, 0.7f);
         Destroy(gameObject);
     }
