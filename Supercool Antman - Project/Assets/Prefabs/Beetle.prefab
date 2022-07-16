@@ -945,19 +945,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb3625de839d94f82897ef153385bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.01
-  anim: {fileID: 1998701486}
-  Health: 0
-  minDistanceFromPlayer: 1
-  chargeDistance: 4
-  chargeStopDistance: 2
-  damage: 5
-  pickupDropChance: 50
+  weaponHitRadius: 3
   bloodSplatterArray:
   - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
   - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
-  weaponHitRadius: 3
+  damage: 5
+  pickupDropChance: 50
+  chargeDistance: 4
+  chargeStopDistance: 2
+  minDistanceFromPlayer: 1
+  movementSpeed: 0.01
+  anim: {fileID: 1998701486}
+  lazerImpactPrefab: {fileID: 2053881004465911388, guid: f7f8506fe56b17a40b89fb45c48dd58d, type: 3}
+  Health: 0
 --- !u!114 &1998701485
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,22 +20,23 @@ public class EnemyManager : MonoBehaviour
     {
         OnEnemyDeath += UpdateBeetleDeathCounter;
         OnEnemyDeath += UpdateMantisDeathCounter;
-/*        OnEnemyDeath += IncrementEnemyHealth;*/
+        OnEnemyDeath += IncrementEnemyHealth;
     }
 
     private void OnDisable()
     {
         OnEnemyDeath -= UpdateBeetleDeathCounter;
         OnEnemyDeath -= UpdateMantisDeathCounter;
-/*        OnEnemyDeath -= IncrementEnemyHealth;*/
+        OnEnemyDeath -= IncrementEnemyHealth;
     }
 
     private void Start()
     {
-        IncrementEnemyHealth();
+        beetleHealth = 100;
+        mantisHealth = 100;
     }
 
-    private void IncrementEnemyHealth()
+    private void IncrementEnemyHealth(int unused)
     {
         beetleHealth = 100 + beetleDeathCounterInteger;
         mantisHealth = 100 + mantisDeathCounterInteger;

@@ -8,17 +8,33 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
-    float timeToNextSpawn;
 
-    GameManager gameManager;
+    private float timeToNextSpawn;
+    private bool shouldSpawn = true;
+    private GameManager gameManager;
+    private Camera cam;
 
-    Camera cam;
+    private void OnEnable()
+    {
+        PlayerStats.OnPlayerDeath += ShouldntSpawn;
+    }
+
+    private void onDisable()
+    {
+        PlayerStats.OnPlayerDeath -= ShouldntSpawn;
+    }
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         cam = Camera.main;
 
         ResetSpawnTime();
+    }
+
+    private void ShouldntSpawn()
+    {
+        shouldSpawn = false;
     }
 
     private void ResetSpawnTime()
@@ -32,7 +48,10 @@ public class EnemySpawner : MonoBehaviour
         timeToNextSpawn -= Time.deltaTime;
         if (timeToNextSpawn <= 0)
         {
-            Spawn();
+            if (shouldSpawn)
+            {
+                Spawn(); 
+            }
         }
     }
 

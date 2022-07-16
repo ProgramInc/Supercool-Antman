@@ -6,25 +6,27 @@ using TMPro;
 
 public class Beetle : MonoBehaviour
 {
-    GameManager gameManager;
-    Vector3 nextTarget;
-    bool hasTarget;
-    [SerializeField] float movementSpeed;
-    [SerializeField] Animator anim;
-    public int Health;
-    [SerializeField] float minDistanceFromPlayer;
-    /*[SerializeField] float maxDistanceFromPlayer = 5;*/
-    [SerializeField] float chargeDistance = 3;
-    [SerializeField] float chargeStopDistance = 1f;
-    GameObject player;
-    EnemyStates currentState;
+    [SerializeField] float weaponHitRadius;
+    [SerializeField] GameObject[] bloodSplatterArray;
     [SerializeField] int damage;
     [SerializeField] int pickupDropChance;
-    Rigidbody2D rb;
-    [SerializeField] GameObject[] bloodSplatterArray;
-    GameObject tempBloodStain;
-    int bloodSplattersInstantiated;
-    [SerializeField] float weaponHitRadius;
+    [SerializeField] float chargeDistance = 3;
+    [SerializeField] float chargeStopDistance = 1f;
+    [SerializeField] float minDistanceFromPlayer;
+    [SerializeField] float movementSpeed;
+    [SerializeField] Animator anim;
+    /*[SerializeField] float maxDistanceFromPlayer = 5;*/
+
+    public int Health;
+
+    private GameManager gameManager;
+    private Vector3 nextTarget;
+    private bool hasTarget;
+    private GameObject player;
+    private EnemyStates currentState;
+    private Rigidbody2D rb;
+    private GameObject tempBloodStain;
+    private int bloodSplattersInstantiated;
 
     private void Awake()
     {
