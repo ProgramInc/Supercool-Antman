@@ -13,6 +13,12 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] int flipSign;
     [SerializeField] GameObject sword;
     [SerializeField] GameObject lightSaber;
+    [SerializeField] Sprite swordSlash;
+    [SerializeField] Sprite lightSaberSlash;
+    [SerializeField] SpriteRenderer fadingAttackRenderer;
+    [SerializeField] Material defaultMaterial;
+    [SerializeField] Material lightSaberMaterial;
+
     PlayerStats playerStats;
     public Vector2 mousePosition { get; private set; }
 
@@ -27,6 +33,7 @@ public class PlayerInput : MonoBehaviour
         cam = Camera.main;
         playerStats = GetComponentInChildren<PlayerStats>();
     }
+
     void Update()
     {
         GroundCheck();
@@ -51,6 +58,9 @@ public class PlayerInput : MonoBehaviour
             sword.SetActive(false);
             lightSaber.SetActive(true);
             playerStats.currentWeapon = PlayerWeaponTypes.Lightsaber;
+            fadingAttackRenderer.sprite = lightSaberSlash;
+            fadingAttackRenderer.material = lightSaberMaterial;
+            
         }
     }
 
@@ -61,6 +71,8 @@ public class PlayerInput : MonoBehaviour
             sword.SetActive(true);
             lightSaber.SetActive(false);
             playerStats.currentWeapon = PlayerWeaponTypes.Sword;
+            fadingAttackRenderer.sprite = swordSlash;
+            fadingAttackRenderer.material = defaultMaterial;
         }
     }
 
@@ -69,6 +81,8 @@ public class PlayerInput : MonoBehaviour
         sword.SetActive(true);
         lightSaber.SetActive(false);
         playerStats.currentWeapon = PlayerWeaponTypes.Sword;
+        fadingAttackRenderer.sprite = swordSlash;
+        fadingAttackRenderer.material = defaultMaterial;
     }
 
     private void CheckForAttacks()
