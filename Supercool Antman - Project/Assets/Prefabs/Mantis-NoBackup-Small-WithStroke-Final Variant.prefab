@@ -75,6 +75,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: ab561cda4b035714096f57c2b7f4f929, type: 3}
   m_PrefabInstance: {fileID: 6111504531925918413}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1178169817
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996440795664401264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6936226, y: 5.060863}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.34724, y: 8.347243}
+  m_EdgeRadius: 0
+--- !u!114 &1178169816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996440795664401264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300f1c151dba5444db6ff5311b2532c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.02
+  anim: {fileID: 1178169821}
+  Health: 0
+  mantisMinWalkDistance: 1
+  chargeDistance: 3
+  chargeStopDistance: 1
+  damage: 0
+  pickupDropChance: 10
+  bloodSplatterArray:
+  - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
+  - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
+  - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
+  weaponHitRadius: 0
+  handsLocation: {fileID: 8599734580719684013}
+  maxWalkDistance: 4
+  mantisHandsPrefab: {fileID: 8558267486048889468, guid: e2347c10889da8a44a00ef264702d2e0, type: 3}
+  mantisProjectileSpeed: 2
+  mantisStopDistance: 0.1
+  bodyRootRotation: {fileID: 4899840488593922835}
 --- !u!50 &1178169818
 Rigidbody2D:
   serializedVersion: 4
@@ -96,32 +153,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1178169817
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5996440795664401264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &1178169821
 Animator:
   serializedVersion: 4
@@ -142,7 +173,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1178169816
+--- !u!114 &762772333598558197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

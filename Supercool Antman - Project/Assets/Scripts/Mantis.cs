@@ -153,10 +153,15 @@ public class Mantis : MonoBehaviour
     void AttackPlayer()
     {
         /*float directionToPlayer = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;*/
+        anim.SetTrigger("Attack");
+        
+        /*currentState = EnemyStates.KeepDistanceFromPlayer;*/
+    }
+
+    void MantisAttackAnimationEvent()
+    {
         Rigidbody2D hands = Instantiate(mantisHandsPrefab, handsLocation.position, bodyRootRotation.rotation).GetComponent<Rigidbody2D>();
         hands.AddForce((player.transform.position - hands.transform.position).normalized * mantisProjectileSpeed, ForceMode2D.Impulse);
-        anim.SetTrigger("Attack");
-        /*currentState = EnemyStates.KeepDistanceFromPlayer;*/
     }
 
     void DoDamageToPlayer()

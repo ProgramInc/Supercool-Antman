@@ -39,12 +39,22 @@ public class Weapon : MonoBehaviour
         
         foreach (Collider2D enemyCollider in enemiesInRange)
         {
-            Beetle enemy = enemyCollider.GetComponent<Beetle>();
-            if (enemy != null)
+            Beetle beetle = enemyCollider.GetComponent<Beetle>();
+            if (beetle != null)
             {
-                enemy.Health -= Damage;
+                beetle.Health -= Damage;
                 GetComponentInParent<WeaponEffect>().TriggerZoom();
-                Instantiate(impactPrefab, enemy.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
+                Instantiate(impactPrefab, beetle.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
+            }
+            else
+            {
+                Mantis Mantis = enemyCollider.GetComponent<Mantis>();
+                if (Mantis != null)
+                {
+                    Mantis.Health -= Damage;
+                    GetComponentInParent<WeaponEffect>().TriggerZoom();
+                    Instantiate(impactPrefab, Mantis.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
+                }
             }
         }
     }
