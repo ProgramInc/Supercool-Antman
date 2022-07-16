@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5953627015184847510}
   - component: {fileID: 5953627015184847511}
   - component: {fileID: 5953627015184847508}
-  - component: {fileID: 5953627015184847504}
+  - component: {fileID: 664162197389805244}
   m_Layer: 7
   m_Name: Lazer
   m_TagString: Lazer
@@ -118,13 +118,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.3, y: 2.1}
   m_Direction: 0
---- !u!114 &5953627015184847504
+--- !u!114 &664162197389805244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5953627015184847509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1f5337d6d10dc40ba660aef484af36, type: 3}
+  m_Script: {fileID: 11500000, guid: f9d8944b5ec974d458a1c33787661640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 100
-  impactPrefab: {fileID: 2053881004465911388, guid: f7f8506fe56b17a40b89fb45c48dd58d, type: 3}
+  damage: 100

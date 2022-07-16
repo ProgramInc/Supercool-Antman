@@ -165,6 +165,11 @@ MonoBehaviour:
   flipSign: 0
   sword: {fileID: 8795414466472797831}
   lightSaber: {fileID: 8795414465448178006}
+  swordSlash: {fileID: 21300000, guid: da3c83e86231faf45a8ef0be35a41886, type: 3}
+  lightSaberSlash: {fileID: 1044282681821512603, guid: 9c3afacd4821ba1428f543ee3ed5b81e, type: 3}
+  fadingAttackRenderer: {fileID: 5478511224102935180}
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  lightSaberMaterial: {fileID: 2100000, guid: f255c683038720546beab5e2f3b2515b, type: 2}
   currentRotation: {x: 0, y: 0, z: 0}
   IsAttacking: 0
   isShooting: 0
@@ -596,6 +601,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnimator: {fileID: 0}
+--- !u!212 &5478511224102935180 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 76458607917510219, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+  m_PrefabInstance: {fileID: 5550746311484306631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5478511224102935183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 76458607917510216, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}

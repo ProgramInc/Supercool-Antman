@@ -21,6 +21,8 @@ public class PlayerAnimatorController : MonoBehaviour
     [SerializeField] float lazerSpeed;
     [SerializeField] GameObject fadingAttackPrefab;
     [SerializeField] Weapon[] weapons;
+
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
