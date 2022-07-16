@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -131}
+  m_AnchoredPosition: {x: 571, y: -131}
   m_SizeDelta: {x: 1914, y: 924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &380693686
@@ -193,7 +193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 107}
+  m_AnchoredPosition: {x: 571.00006, y: 107}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &866814278
@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 5753064779281484464}
   - component: {fileID: 5753064779281484467}
   - component: {fileID: 5753064779281484466}
+  - component: {fileID: 1714757397}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -490,6 +491,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1714757397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753064779281484477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a54366859e986d4390d8650c0386d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsPanel: {fileID: 3396416042153878615}
+  restartButton: {fileID: 380693684}
+  menuButton: {fileID: 866814276}
 --- !u!1 &5753064781100081506
 GameObject:
   m_ObjectHideFlags: 0
