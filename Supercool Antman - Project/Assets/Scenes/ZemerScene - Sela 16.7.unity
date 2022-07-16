@@ -135,14 +135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 749742561, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2046255289, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5753064779281484465, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1650,30 +1642,16 @@ PrefabInstance:
       propertyPath: onDeathAnimators.Array.data[3]
       value: 
       objectReference: {fileID: 1724332708}
+    - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
+      propertyPath: enemyDeathCountersText.Array.data[0]
+      value: 
+      objectReference: {fileID: 2046255289}
+    - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
+      propertyPath: enemyDeathCountersText.Array.data[1]
+      value: 
+      objectReference: {fileID: 566981997}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
---- !u!1 &8427987154360840731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8427987154207090752, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
-  m_PrefabInstance: {fileID: 8427987154360840730}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8427987154360840732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8427987154360840731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa980c7cf6d42a42b35099536c5819e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDeathCountersText:
-  - {fileID: 2046255289}
-  - {fileID: 566981997}
-  beetleHealth: 0
-  mantisHealth: 0
 --- !u!1001 &8432666859165355137
 PrefabInstance:
   m_ObjectHideFlags: 0
