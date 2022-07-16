@@ -952,7 +952,7 @@ MonoBehaviour:
   chargeDistance: 4
   chargeStopDistance: 2
   damage: 5
-  pickupDropChance: 5
+  pickupDropChance: 50
   bloodSplatterArray:
   - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
