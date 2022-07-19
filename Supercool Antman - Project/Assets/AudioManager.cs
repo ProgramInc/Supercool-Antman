@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
     [SerializeField] AudioClip[] enemyDeathSound;
-    [SerializeField] AudioClip lazerSound;
+    [SerializeField] AudioClip[] lazerSound;
     [SerializeField] AudioClip[] ouchSound;
     [SerializeField] AudioClip[] swordWhoosh;
     [SerializeField] AudioClip[] lightSaberSwoosh;
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
 
     void PlayLazerSound()
     {
-        audioSource.PlayOneShot(lazerSound);
+        audioSource.PlayOneShot(lazerSound[Random.Range(0,lazerSound.Length)]);
     }
 
     void PlaySwordWhooshSound()

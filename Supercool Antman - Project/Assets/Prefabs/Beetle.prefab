@@ -1048,7 +1048,7 @@ MonoBehaviour:
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
   - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
   damage: 5
-  pickupDropChance: 50
+  pickupDropChance: 100
   chargeDistance: 4
   chargeStopDistance: 2
   minDistanceFromPlayer: 1
