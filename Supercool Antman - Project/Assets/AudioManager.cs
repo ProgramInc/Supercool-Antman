@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip[] landingSound;
     [SerializeField] AudioClip[] chewSounds;
     [SerializeField] AudioClip[] energyCollectedSounds;
-    [SerializeField] AudioClip lazerImpactSound;
+    [SerializeField] AudioClip[] lazerImpactSounds;
 
 
     private void Awake()
@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         WallScript.OnPlayerLand += PlayLandingSound;
         PlayerStats.OnLifeCollcted += PlayChewingSound;
         PlayerStats.OnEnergyColleted += PlayEnergyCollectedSound;
-        Lazer.OnLazerImpact += PlayLazerImpactSound; 
+        Lazer.OnLazerImpact += PlayLazerImpactSound;
     }
 
     private void OnDisable()
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
 
     void PlayLazerImpactSound()
     {
-        audioSource.PlayOneShot(lazerImpactSound);
+        audioSource.PlayOneShot(lazerImpactSounds[Random.Range(0,lazerImpactSounds.Length)]);
     }
 
     void PlayOuchSound()
