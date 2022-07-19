@@ -846,6 +846,7 @@ MonoBehaviour:
   energyCollectedSounds:
   - {fileID: 8300000, guid: 1d393852c432a6245aae0f0148b3e493, type: 3}
   - {fileID: 8300000, guid: 11dd9d4d427ab3040bae3eae42b235ed, type: 3}
+  lazerImpactSound: {fileID: 8300000, guid: a263b95608a120541ab21772d3da1856, type: 3}
 --- !u!4 &595901095
 Transform:
   m_ObjectHideFlags: 0
