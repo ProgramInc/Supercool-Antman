@@ -811,31 +811,30 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b9e69bee6bfb5db43bac8999d1ad789f, type: 3}
   - {fileID: 8300000, guid: 6f544145ed6957e428cde59e4519542c, type: 3}
   lazerSound:
-  - {fileID: 8300000, guid: 950e9bfd46495a240a2b069c5abafebd, type: 3}
+  - {fileID: 8300000, guid: 529dbd54cf1a45f4984a505676abcb4c, type: 3}
+  - {fileID: 8300000, guid: e589fc3afc1bd764290c9f4cb777ab61, type: 3}
+  - {fileID: 8300000, guid: 38201d0ca1d507844be802c313f01841, type: 3}
   ouchSound:
   - {fileID: 8300000, guid: 16c53b4490c72364f9cf741b2b39a403, type: 3}
   - {fileID: 8300000, guid: 9d6d6cd82a0ef8b4abda64bc076d6090, type: 3}
   - {fileID: 8300000, guid: 8d5af4135c5fe3943993c10491217e6d, type: 3}
   swordWhoosh:
-  - {fileID: 8300000, guid: 937ea1eb28be10c438075d98e09c2fd9, type: 3}
-  - {fileID: 8300000, guid: 7b5dd513a30f24544a6c4d220fef6ed5, type: 3}
-  - {fileID: 8300000, guid: 43f636571010c674c81be0a05de2c646, type: 3}
+  - {fileID: 8300000, guid: 1b637892ad7b87d41b4a7fc875d5975c, type: 3}
+  - {fileID: 8300000, guid: fe671869a87aed94998eec3dc76bf9e9, type: 3}
+  - {fileID: 8300000, guid: 61e14c0b2ec1b834b911671acf59a5ac, type: 3}
+  - {fileID: 8300000, guid: 56f4f377fabed5e4480d3657969a72d9, type: 3}
+  - {fileID: 8300000, guid: 49a31b1680b641341ae0db28509ffd8b, type: 3}
   lightSaberSwoosh:
   - {fileID: 8300000, guid: 22d2b4a4bdae08d418884df33651ab08, type: 3}
   - {fileID: 8300000, guid: 665a03ddfd3638244aeaf66d6f390af5, type: 3}
   - {fileID: 8300000, guid: 10af1d2fe0d107447b7635551bc734de, type: 3}
   swordHit:
-  - {fileID: 8300000, guid: ef114ae6279c94f42bf75ac703b27618, type: 3}
-  - {fileID: 8300000, guid: 5b9769f62ef73f946bfa7c8d4f875835, type: 3}
-  - {fileID: 8300000, guid: cd17ab0bc3651ac459aaa07c35bbe5ed, type: 3}
-  - {fileID: 8300000, guid: ae8689a2c5a540b4f9aaebef0ff5721c, type: 3}
-  - {fileID: 8300000, guid: aaa6d6f28acdc7546a6aa6949ee4f8f0, type: 3}
-  - {fileID: 8300000, guid: 2793e80ce43861f4ab63819d77b28f2f, type: 3}
+  - {fileID: 8300000, guid: 5948e514a6a548e4f913682d6f51087d, type: 3}
+  - {fileID: 8300000, guid: 229dd1ff0a2df3b4ea467ed30db6f6fe, type: 3}
+  - {fileID: 8300000, guid: 59789417ac1fa804e961eae6e84d0ef1, type: 3}
   lightSaberHit: []
   JumpSound:
-  - {fileID: 8300000, guid: 9198aa42ca32d424c9f0c9e5662255d6, type: 3}
-  - {fileID: 8300000, guid: 01ce876e3df6aa44ba290bc6c9f59183, type: 3}
-  - {fileID: 8300000, guid: 3f46f1864b019a946bc688566e7dc955, type: 3}
+  - {fileID: 8300000, guid: fb352c3aaed7b6443af9a4566877d88a, type: 3}
   landingSound:
   - {fileID: 8300000, guid: 5d14835ea61f0c1488effa16040e1057, type: 3}
   - {fileID: 8300000, guid: 29a65f1879dcd9d44933cba7ca23e05b, type: 3}
@@ -846,7 +845,9 @@ MonoBehaviour:
   energyCollectedSounds:
   - {fileID: 8300000, guid: 1d393852c432a6245aae0f0148b3e493, type: 3}
   - {fileID: 8300000, guid: 11dd9d4d427ab3040bae3eae42b235ed, type: 3}
-  lazerImpactSound: {fileID: 8300000, guid: a263b95608a120541ab21772d3da1856, type: 3}
+  lazerImpactSounds:
+  - {fileID: 8300000, guid: f57fade9b40f10546987565e0dcaf653, type: 3}
+  - {fileID: 8300000, guid: 0f310040fa69e5a408a60b881c06f797, type: 3}
 --- !u!4 &595901095
 Transform:
   m_ObjectHideFlags: 0
