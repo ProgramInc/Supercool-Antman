@@ -954,7 +954,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!114 &5753064779281484467
 MonoBehaviour:
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1254,6 +1254,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5753064779281484465}
     m_Modifications:
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1652281211}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DeathScreenButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590844652430622176, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727294204732178034, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3780653624201178686, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1338,12 +1370,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5200147136774688791, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6907251735350383779, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
       propertyPath: m_Name
       value: Pause Menu Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+--- !u!114 &1652281211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5327561567065631286, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+  m_PrefabInstance: {fileID: 5327561566487553357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8ad2164c2dda44da8dc9cb0da7e209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1599958604864106990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6907251735350383779, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}

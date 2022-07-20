@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
         /*Weapon.OnEnemyWasHit += PlaySwordHitSound;*/
         PlayerAnimatorController.OnSwordSwoosh += PlaySwordWhooshSound;
         PlayerAnimatorController.OnLightSaberSwoosh += PlayLightSaberWhooshSound;
-        PlayerInput.OnFLip += PlayJumpSound;
+        PlayerInput.OnFlip += PlayJumpSound;
         WallScript.OnPlayerLand += PlayLandingSound;
         PlayerStats.OnLifeCollcted += PlayChewingSound;
         PlayerStats.OnEnergyColleted += PlayEnergyCollectedSound;
@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
         /*Weapon.OnEnemyWasHit -= PlaySwordHitSound;*/
         PlayerAnimatorController.OnSwordSwoosh -= PlaySwordWhooshSound;
         PlayerAnimatorController.OnLightSaberSwoosh -= PlayLightSaberWhooshSound;
-        PlayerInput.OnFLip -= PlayJumpSound;
+        PlayerInput.OnFlip -= PlayJumpSound;
         WallScript.OnPlayerLand -= PlayLandingSound;
         PlayerStats.OnLifeCollcted -= PlayChewingSound;
         PlayerStats.OnEnergyColleted -= PlayEnergyCollectedSound;

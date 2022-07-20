@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeathScreenButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -20,5 +21,10 @@ public class DeathScreenButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerExit(PointerEventData eventData)
     {
         animator.SetBool("isMouseOnButton", false);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

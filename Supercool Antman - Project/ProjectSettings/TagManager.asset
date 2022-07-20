@@ -8,6 +8,7 @@ TagManager:
   - FloorOrCeiling
   - Sword
   - Lazer
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX

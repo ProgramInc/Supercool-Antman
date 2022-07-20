@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
         PlayerStats.OnPlayerDeath -= Death;
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 
     void Death()
     {

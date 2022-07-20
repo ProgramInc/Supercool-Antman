@@ -3,13 +3,16 @@ using UnityEngine.UI;
 
 public class AudioControls : MonoBehaviour
 {
-    [SerializeField] AudioSource musicPlayer;
-    [SerializeField] AudioSource sfxPlayer;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
 
+    AudioSource musicPlayer;
+    AudioSource sfxPlayer;
+
     private void Start()
     {
+        sfxPlayer = GetComponent<AudioSource>();
+        musicPlayer = GameObject.FindWithTag("MusicPlayer").GetComponent<AudioSource>();
         ReadVolumesFromPlayerPrefs();
     }
 
