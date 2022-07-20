@@ -37,46 +37,51 @@ public class PlayerAnimatorController : MonoBehaviour
         playerInput = GetComponentInParent<PlayerInput>();
         playerStats = GetComponent<PlayerStats>();
     }
+
     void Update()
     {
-        animator.SetBool("IsWalking", playerInput.isWalking);
-        if (playerInput.isGrounded)
+        if (!playerInput.isPaused)
         {
-            animator.SetFloat("AnimationSpeed", (reticle.position.x > transform.position.x ? 1 : -1) * playerInput.walkModifierHorizontal);
-        }
-        else if (playerInput.isWalled)
-        {
-            animator.SetFloat("AnimationSpeed", (reticle.position.y > transform.position.y ? 1 : -1) * playerInput.walkModifierVertical);
-        }
-        if (playerInput.IsAttacking)
-        {
-            if (playerStats.currentWeapon == PlayerWeaponTypes.Sword)
+            animator.SetBool("IsWalking", playerInput.isWalking);
+            if (playerInput.isGrounded)
             {
-                animator.SetTrigger("IsAttacking");
-                OnSwordSwoosh?.Invoke();
-                print("invoked");
-                playerInput.IsAttacking = false;
+                animator.SetFloat("AnimationSpeed", (reticle.position.x > transform.position.x ? 1 : -1) * playerInput.walkModifierHorizontal);
             }
-            else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+            else if (playerInput.isWalled)
             {
-                animator.SetTrigger("IsAttacking");
-                OnLightSaberSwoosh?.Invoke();
-                playerInput.IsAttacking = false;
-                if (playerStats.currentEnergy <= 0)
+                animator.SetFloat("AnimationSpeed", (reticle.position.y > transform.position.y ? 1 : -1) * playerInput.walkModifierVertical);
+            }
+            if (playerInput.IsAttacking)
+            {
+                if (playerStats.currentWeapon == PlayerWeaponTypes.Sword)
                 {
-                    print(playerStats.currentEnergy);
-                    playerInput.ForceDrawSword();
+                    animator.SetTrigger("IsAttacking");
+                    OnSwordSwoosh?.Invoke();
+                    print("invoked");
+                    playerInput.IsAttacking = false;
+                }
+                else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
+                {
+                    animator.SetTrigger("IsAttacking");
+                    OnLightSaberSwoosh?.Invoke();
+                    playerInput.IsAttacking = false;
+                    if (playerStats.currentEnergy <= 0)
+                    {
+                        print(playerStats.currentEnergy);
+                        playerInput.ForceDrawSword();
+                    }
                 }
             }
+
+            if (playerInput.isShooting)
+            {
+                if (playerStats.currentEnergy > 0)
+                {
+                    animator.SetTrigger("IsShooting");
+                }
+            } 
         }
 
-        if (playerInput.isShooting)
-        {
-            if (playerStats.currentEnergy > 0)
-            {
-                animator.SetTrigger("IsShooting");
-            }
-        }
     }
 
     void DecreaseEnergyByLightsaber()
@@ -94,21 +99,24 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private void LateUpdate()
     {
-        IKChain2D head = headSolver.GetChain(0);
-        head.target.position = reticle.position;
-        /*head.target.position = playerInput.mousePosition;*/
-
-        Vector3 ikTargetOffset = (leftShoulder.position - (Vector3)playerInput.mousePosition).normalized * swordDistanceFromBody;
-        IKChain2D leftHand = leftArmSolver.GetChain(0);
-
-        if (!animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
+        if (!playerInput.isPaused)
         {
-            leftHandTarget.position = leftShoulder.position + ikTargetOffset;
-            leftHand.target = leftHandTarget;
-        }
-        else
-        {
-            leftHand.target = reticle;
+            IKChain2D head = headSolver.GetChain(0);
+            head.target.position = reticle.position;
+            /*head.target.position = playerInput.mousePosition;*/
+
+            Vector3 ikTargetOffset = (leftShoulder.position - (Vector3)playerInput.mousePosition).normalized * swordDistanceFromBody;
+            IKChain2D leftHand = leftArmSolver.GetChain(0);
+
+            if (!animator.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
+            {
+                leftHandTarget.position = leftShoulder.position + ikTargetOffset;
+                leftHand.target = leftHandTarget;
+            }
+            else
+            {
+                leftHand.target = reticle;
+            } 
         }
     }
 

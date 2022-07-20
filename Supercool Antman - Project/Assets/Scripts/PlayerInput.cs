@@ -31,7 +31,9 @@ public class PlayerInput : MonoBehaviour
     public bool isShooting;
 
     public delegate void FlipAction();
-    public static FlipAction OnFLip;
+    public static FlipAction OnFlip;
+
+    public bool isPaused;
 
     private void Awake()
     {
@@ -59,6 +61,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            isPaused = !isPaused;
             PauseMenuManager.OnPauseMenuToggled?.Invoke();
         }
     }
@@ -181,7 +184,7 @@ public class PlayerInput : MonoBehaviour
             if (isGrounded || isWalled)
             {
                 Physics2D.gravity = -Physics2D.gravity;
-                OnFLip?.Invoke();
+                OnFlip?.Invoke();
             }
         }
     }
@@ -191,41 +194,44 @@ public class PlayerInput : MonoBehaviour
     void OrientPlayer()
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (isGrounded)
+        if (!isPaused)
         {
-            if (transform.position.x > mousePosition.x)
-            {
-                transform.rotation = currentRotation.z == 0 ? Quaternion.Euler(0, 180, currentRotation.z) : Quaternion.Euler(0, 0, currentRotation.z);
-            }
-            else
-            {
-                transform.rotation = currentRotation.z == 0 ? Quaternion.Euler(0, 0, currentRotation.z) : Quaternion.Euler(0, 180, currentRotation.z);
-            }
-        }
-        else if (isWalled)
-        {
-            if (transform.position.y > mousePosition.y)
+            if (isGrounded)
             {
                 if (transform.position.x > mousePosition.x)
                 {
-                    transform.rotation = Quaternion.Euler(0, 180, -currentRotation.z);
+                    transform.rotation = currentRotation.z == 0 ? Quaternion.Euler(0, 180, currentRotation.z) : Quaternion.Euler(0, 0, currentRotation.z);
                 }
                 else
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
+                    transform.rotation = currentRotation.z == 0 ? Quaternion.Euler(0, 0, currentRotation.z) : Quaternion.Euler(0, 180, currentRotation.z);
                 }
             }
-            else
+            else if (isWalled)
             {
-                if (transform.position.x > mousePosition.x)
+                if (transform.position.y > mousePosition.y)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
+                    if (transform.position.x > mousePosition.x)
+                    {
+                        transform.rotation = Quaternion.Euler(0, 180, -currentRotation.z);
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
+                    }
                 }
                 else
                 {
-                    transform.rotation = Quaternion.Euler(0, 180, -currentRotation.z);
+                    if (transform.position.x > mousePosition.x)
+                    {
+                        transform.rotation = Quaternion.Euler(0, 0, currentRotation.z);
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(0, 180, -currentRotation.z);
+                    }
                 }
-            }
+            } 
         }
     }
 }

@@ -177,6 +177,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   IsAttacking: 0
   isShooting: 0
+  isPaused: 0
 --- !u!114 &2005002942777365021
 MonoBehaviour:
   m_ObjectHideFlags: 0
