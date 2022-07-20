@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWalking: 0
+  walkModifierHorizontal: 0
+  walkModifierVertical: 0
   isGrounded: 0
   isWalled: 0
   groundRayCaster: {fileID: 5550746311299935539}
@@ -373,6 +375,22 @@ PrefabInstance:
     - target: {fileID: 645841435, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 645841436, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 645841438, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 645841438, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 645841438, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 863663803, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
       propertyPath: m_Layer
