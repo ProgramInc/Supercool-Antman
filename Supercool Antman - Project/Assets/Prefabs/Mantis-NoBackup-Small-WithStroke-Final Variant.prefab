@@ -1291,23 +1291,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mantisStopDistance: 0.1
-  movementSpeed: 0.02
+  movementSpeed: 0.015
   anim: {fileID: 1178169821}
   bodyRootRotation: {fileID: 4899840488593922835}
   mantisHandsPrefab: {fileID: 8558267486048889468, guid: e2347c10889da8a44a00ef264702d2e0, type: 3}
   mantisProjectileSpeed: 2
   weaponHitRadius: 0
   handsLocation: {fileID: 8599734580719684013}
-  maxWalkDistance: 4
+  maxWalkDistance: 5
   damage: 0
-  pickupDropChance: 10
+  pickupDropChance: 60
   bloodSplatterArray:
   - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
   - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
   - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
   chargeDistance: 3
   chargeStopDistance: 1
-  mantisMinWalkDistance: 1
+  mantisMinWalkDistance: 2
   Health: 0
 --- !u!114 &1178169825
 MonoBehaviour:
@@ -1342,37 +1342,6 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
---- !u!114 &762772333598558197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5996440795664401264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300f1c151dba5444db6ff5311b2532c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mantisStopDistance: 0.1
-  movementSpeed: 0.02
-  anim: {fileID: 1178169821}
-  bodyRootRotation: {fileID: 4899840488593922835}
-  mantisHandsPrefab: {fileID: 8558267486048889468, guid: e2347c10889da8a44a00ef264702d2e0, type: 3}
-  mantisProjectileSpeed: 2
-  weaponHitRadius: 0
-  handsLocation: {fileID: 8599734580719684013}
-  maxWalkDistance: 4
-  damage: 0
-  pickupDropChance: 10
-  bloodSplatterArray:
-  - {fileID: 6536140586667308652, guid: f825a39d11bc5fe4d9a0efc493fef4cb, type: 3}
-  - {fileID: 6643747020286696349, guid: 9022d38f098f8c5449995064415980f6, type: 3}
-  - {fileID: 8804791947857046680, guid: 8c916ba2fdfc54d49b22955b7652fb99, type: 3}
-  chargeDistance: 3
-  chargeStopDistance: 1
-  mantisMinWalkDistance: 1
-  Health: 0
 --- !u!4 &6671786680308707623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 596338130531505130, guid: ab561cda4b035714096f57c2b7f4f929, type: 3}

@@ -10,8 +10,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] float weaponHitRadius;
     [SerializeField] Transform weaponTip;
 
-    public delegate void EnemyWasHitAction();
-    public static EnemyWasHitAction OnEnemyWasHit;
+    /*public delegate void EnemyWasHitAction();
+    public static EnemyWasHitAction OnEnemyWasHit;*/
 
     /*public delegate void SwordSwooshAction();
     public static SwordSwooshAction OnSwordSwoosh;
@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
                 beetle.Health -= Damage;
                 GetComponentInParent<WeaponEffect>().TriggerZoom();
                 Instantiate(impactPrefab, beetle.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
-                OnEnemyWasHit?.Invoke();
+                /*OnEnemyWasHit?.Invoke();*/
             }
             else
             {
@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour
                     Mantis.Health -= Damage;
                     GetComponentInParent<WeaponEffect>().TriggerZoom();
                     Instantiate(impactPrefab, Mantis.transform.position, Quaternion.Euler(0, 0, Random.Range(-45, 45))); ;
-                    OnEnemyWasHit?.Invoke();
+                    /*OnEnemyWasHit?.Invoke();*/
                 }
             }
         }

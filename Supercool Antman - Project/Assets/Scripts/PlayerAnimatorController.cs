@@ -40,6 +40,14 @@ public class PlayerAnimatorController : MonoBehaviour
     void Update()
     {
         animator.SetBool("IsWalking", playerInput.isWalking);
+        if (playerInput.isGrounded)
+        {
+            animator.SetFloat("AnimationSpeed", (reticle.position.x > transform.position.x ? 1 : -1) * playerInput.walkModifierHorizontal);
+        }
+        else if (playerInput.isWalled)
+        {
+            animator.SetFloat("AnimationSpeed", (reticle.position.y > transform.position.y ? 1 : -1) * playerInput.walkModifierVertical);
+        }
         if (playerInput.IsAttacking)
         {
             if (playerStats.currentWeapon == PlayerWeaponTypes.Sword)
@@ -47,7 +55,7 @@ public class PlayerAnimatorController : MonoBehaviour
                 animator.SetTrigger("IsAttacking");
                 OnSwordSwoosh?.Invoke();
                 print("invoked");
-                playerInput.IsAttacking = false; 
+                playerInput.IsAttacking = false;
             }
             else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
             {
@@ -75,10 +83,10 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
         {
-            playerStats.ChangeEnergy(-5); 
+            playerStats.ChangeEnergy(-5);
         }
-    }    
-    
+    }
+
     void DecreaseEnergyByLazer()
     {
         playerStats.ChangeEnergy(-10);

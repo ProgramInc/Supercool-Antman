@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3070474730432770880}
   - component: {fileID: 3238025290251205564}
   - component: {fileID: 6829384757647836512}
+  - component: {fileID: -3787015573383327403}
   m_Layer: 0
   m_Name: Sword Impact Prefab
   m_TagString: Untagged
@@ -118,3 +119,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49774cd664c4354782db1b2851a72f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3787015573383327403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068246824095359461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01a8cbfff6c10d4ebd1cef77f5cf5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 0
