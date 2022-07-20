@@ -139,10 +139,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 112147079}
-    - target: {fileID: 5753064779281484464, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5753064779281484465, guid: 8a01d3bf02a179c43b5a9fdcdad89272, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1142,11 +1138,6 @@ PrefabInstance:
       objectReference: {fileID: 1635094285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
---- !u!82 &1365642091 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5673878714354931209, guid: cb958f9780ba9734485a64b3a7c07050, type: 3}
-  m_PrefabInstance: {fileID: 5673878714832792748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1365642094 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3152651641891879957, guid: cb958f9780ba9734485a64b3a7c07050, type: 3}
@@ -1805,10 +1796,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3152651641891879957, guid: cb958f9780ba9734485a64b3a7c07050, type: 3}
-      propertyPath: sfxPlayer
-      value: 
-      objectReference: {fileID: 1365642091}
     - target: {fileID: 3152651641891879957, guid: cb958f9780ba9734485a64b3a7c07050, type: 3}
       propertyPath: sfxSlider
       value: 
