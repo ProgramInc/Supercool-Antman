@@ -28,8 +28,8 @@ public class PlayerInput : MonoBehaviour
     public bool IsAttacking;
     public bool isShooting;
 
-    public delegate void FLipAction();
-    public static FLipAction OnFLip;
+    public delegate void FlipAction();
+    public static FlipAction OnFLip;
 
     private void Awake()
     {
@@ -48,7 +48,16 @@ public class PlayerInput : MonoBehaviour
             CheckForAttacks();
             CheckForShooting();
             DrawSword();
-            DrawLightSaber(); 
+            DrawLightSaber();
+            CheckEscape();
+        }
+    }
+
+    private void CheckEscape()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenuManager.OnPauseMenuToggled?.Invoke();
         }
     }
 
