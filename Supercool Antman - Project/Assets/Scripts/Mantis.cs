@@ -114,9 +114,9 @@ public class Mantis : MonoBehaviour
                     currentState = MantisStates.Death;
                     break;
                 }
-
                 AttackPlayer();
-                currentState = MantisStates.MoveToDestination;
+                print(currentState);
+                /*currentState = MantisStates.MoveToDestination;*/
                 break;
 
             case MantisStates.Death:
@@ -151,7 +151,8 @@ public class Mantis : MonoBehaviour
     {
         /*float directionToPlayer = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;*/
         anim.SetTrigger("Attack");
-        
+        currentState = MantisStates.MoveToDestination;
+
         /*currentState = EnemyStates.KeepDistanceFromPlayer;*/
     }
 

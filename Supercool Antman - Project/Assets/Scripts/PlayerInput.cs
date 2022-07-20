@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public bool isWalking;
+    public float walkModifierHorizontal;
+    public float walkModifierVertical;
     public bool isGrounded;
-    [SerializeField] bool isWalled;
+    public bool isWalled;
     [SerializeField] Transform groundRayCaster;
     [SerializeField] float speed = 6f;
     [SerializeField] int flipSign;
@@ -113,6 +115,8 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0 && isGrounded || Input.GetAxisRaw("Vertical") != 0 && isWalled)
         {
             isWalking = true;
+            walkModifierHorizontal = Input.GetAxisRaw("Horizontal");
+            walkModifierVertical = Input.GetAxisRaw("Vertical");
         }
         else
         {

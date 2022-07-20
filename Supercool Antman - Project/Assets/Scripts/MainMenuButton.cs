@@ -10,7 +10,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponentInParent<AudioSource>();
-        mainMenuManager = GetComponentInParent<MainMenuManager>();
+        mainMenuManager = FindObjectOfType<MainMenuManager>();
     }
 
     public void OnPointerExit(PointerEventData eventData)
