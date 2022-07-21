@@ -1138,11 +1138,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1724332708}
     - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
-      propertyPath: enemyDeathCountersText.Array.data[0]
+      propertyPath: beetleDeathCountersText
       value: 
       objectReference: {fileID: 1624942020}
     - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
-      propertyPath: enemyDeathCountersText.Array.data[1]
+      propertyPath: mantisDeathCountersText
       value: 
       objectReference: {fileID: 1635094285}
     m_RemovedComponents: []

@@ -5,29 +5,35 @@ using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
-    public delegate void EnemyDeathAction(int enemyNumber);
-    public static EnemyDeathAction OnEnemyDeath;
+    public delegate void BeetleDeathAction();
+    public static BeetleDeathAction OnBeetleDeath;
 
-    public TextMeshProUGUI[] enemyDeathCountersText;
+    public delegate void MantisDeathAction();
+    public static MantisDeathAction OnMantisDeath;
 
-    private int beetleDeathCounterInteger;
-    private int mantisDeathCounterInteger;
+    public TextMeshProUGUI beetleDeathCountersText;
+    public TextMeshProUGUI mantisDeathCountersText;
+
+    [SerializeField] private int beetleDeathCounterInteger;
+    [SerializeField] private int mantisDeathCounterInteger;
 
     public int beetleHealth;
     public int mantisHealth;
 
     private void OnEnable()
     {
-        OnEnemyDeath += UpdateBeetleDeathCounter;
-        OnEnemyDeath += UpdateMantisDeathCounter;
-        OnEnemyDeath += IncrementEnemyHealth;
+        OnBeetleDeath += UpdateBeetleDeathCounter;
+        OnMantisDeath += UpdateMantisDeathCounter;
+        OnBeetleDeath += IncrementEnemyHealth;
+        OnMantisDeath += IncrementEnemyHealth;
     }
 
     private void OnDisable()
     {
-        OnEnemyDeath -= UpdateBeetleDeathCounter;
-        OnEnemyDeath -= UpdateMantisDeathCounter;
-        OnEnemyDeath -= IncrementEnemyHealth;
+        OnBeetleDeath -= UpdateBeetleDeathCounter;
+        OnMantisDeath -= UpdateMantisDeathCounter;
+        OnBeetleDeath -= IncrementEnemyHealth;
+        OnMantisDeath -= IncrementEnemyHealth;
     }
 
     private void Start()
@@ -36,21 +42,21 @@ public class EnemyManager : MonoBehaviour
         mantisHealth = 100;
     }
 
-    private void IncrementEnemyHealth(int unused)
+    private void IncrementEnemyHealth()
     {
         beetleHealth = 100 + beetleDeathCounterInteger;
         mantisHealth = 100 + mantisDeathCounterInteger;
     }
 
-    private void UpdateBeetleDeathCounter(int enemyNumber)
+    private void UpdateBeetleDeathCounter()
     {
         beetleDeathCounterInteger++;
-        enemyDeathCountersText[enemyNumber].text = beetleDeathCounterInteger.ToString();
+        beetleDeathCountersText.text = beetleDeathCounterInteger.ToString();
     }
 
-    private void UpdateMantisDeathCounter(int enemyNumber)
+    private void UpdateMantisDeathCounter()
     {
         mantisDeathCounterInteger++;
-        enemyDeathCountersText[enemyNumber].text = mantisDeathCounterInteger.ToString();
+        beetleDeathCountersText.text = mantisDeathCounterInteger.ToString();
     }
 }
