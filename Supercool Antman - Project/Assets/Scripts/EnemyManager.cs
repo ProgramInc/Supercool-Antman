@@ -57,6 +57,6 @@ public class EnemyManager : MonoBehaviour
     private void UpdateMantisDeathCounter()
     {
         mantisDeathCounterInteger++;
-        beetleDeathCountersText.text = mantisDeathCounterInteger.ToString();
+        mantisDeathCountersText.text = mantisDeathCounterInteger.ToString();
     }
 }
