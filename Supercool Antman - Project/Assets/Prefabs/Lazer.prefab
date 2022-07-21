@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d8944b5ec974d458a1c33787661640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 200
   lazerImpactPrefab: {fileID: 2053881004465911388, guid: f7f8506fe56b17a40b89fb45c48dd58d, type: 3}
