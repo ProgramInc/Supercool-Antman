@@ -20,5 +20,9 @@ public class EnemyWeapons : MonoBehaviour
         }
     }*/
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

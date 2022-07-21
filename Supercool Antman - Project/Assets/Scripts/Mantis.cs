@@ -160,7 +160,6 @@ public class Mantis : MonoBehaviour
     {
         Rigidbody2D hands = Instantiate(mantisHandsPrefab, handsLocation.position, bodyRootRotation.rotation).GetComponent<Rigidbody2D>();
         hands.AddForce((player.transform.position - hands.transform.position).normalized * mantisProjectileSpeed, ForceMode2D.Impulse);
-        Destroy(hands.gameObject, 15f);
     }
 
     void DoDamageToPlayer()
