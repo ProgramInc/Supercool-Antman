@@ -20,8 +20,8 @@ public class Mantis : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] int pickupDropChance;
     [SerializeField] GameObject[] bloodSplatterArray;
-    [SerializeField] float chargeDistance = 3;
-    [SerializeField] float chargeStopDistance = 1f;
+/*    [SerializeField] float chargeDistance = 3;*/
+/*    [SerializeField] float chargeStopDistance = 1f;*/
     [SerializeField] float mantisMinWalkDistance;
 
     public int Health;
@@ -196,7 +196,7 @@ public class Mantis : MonoBehaviour
             bloodSplattersInstantiated += 1;
         }
 
-        EnemyManager.OnEnemyDeath?.Invoke(1);
+        EnemyManager.OnMantisDeath?.Invoke();
         Destroy(tempBloodStain, 0.7f);
         Destroy(gameObject);
     }

@@ -32,7 +32,8 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyManager.OnEnemyDeath += PlayEnemyDeathSound;
+        EnemyManager.OnBeetleDeath += PlayEnemyDeathSound;
+        EnemyManager.OnMantisDeath += PlayEnemyDeathSound;
         PlayerStats.OnPlayerWasHit += PlayOuchSound;
         PlayerAnimatorController.OnLazerShot += PlayLazerSound;
         /*Weapon.OnEnemyWasHit += PlaySwordHitSound;*/
@@ -49,7 +50,8 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
-        EnemyManager.OnEnemyDeath -= PlayEnemyDeathSound;
+        EnemyManager.OnBeetleDeath -= PlayEnemyDeathSound;
+        EnemyManager.OnMantisDeath -= PlayEnemyDeathSound;
         PlayerStats.OnPlayerWasHit -= PlayOuchSound;
         PlayerAnimatorController.OnLazerShot -= PlayLazerSound;
         /*Weapon.OnEnemyWasHit -= PlaySwordHitSound;*/
@@ -65,7 +67,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    void PlayEnemyDeathSound(int unused)
+    void PlayEnemyDeathSound()
     {
         audioSource.PlayOneShot(enemyDeathSound[(Random.Range(0, enemyDeathSound.Length))]);
     }

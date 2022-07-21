@@ -222,7 +222,7 @@ public class Beetle : MonoBehaviour
             bloodSplattersInstantiated += 1;
         }
 
-        EnemyManager.OnEnemyDeath?.Invoke(0);
+        EnemyManager.OnBeetleDeath?.Invoke();
         Destroy(tempBloodStain, 0.7f);
         Destroy(gameObject);
     }
