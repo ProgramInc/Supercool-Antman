@@ -71,7 +71,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5948e514a6a548e4f913682d6f51087d, type: 3}
   - {fileID: 8300000, guid: 229dd1ff0a2df3b4ea467ed30db6f6fe, type: 3}
   - {fileID: 8300000, guid: 59789417ac1fa804e961eae6e84d0ef1, type: 3}
-  lightSaberHit: []
+  lightSaberHit:
+  - {fileID: 8300000, guid: 800e23f6e23fadf43ba24fc19892f75b, type: 3}
+  - {fileID: 8300000, guid: 55f741ce9d06e264ca4e88d7e9bde932, type: 3}
+  - {fileID: 8300000, guid: be3876f8ecdb0474984f7b179f15a1d1, type: 3}
   JumpSound:
   - {fileID: 8300000, guid: 38c21f4c22d7d2f44b51d837a0d2bdf4, type: 3}
   landingSound:
