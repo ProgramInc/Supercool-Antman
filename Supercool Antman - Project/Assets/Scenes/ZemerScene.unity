@@ -854,6 +854,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 340a946ef143c1044a8102a2a867dd85, type: 3}
   - {fileID: 8300000, guid: 057d5f441a598bb4882a11e276058916, type: 3}
   lazerImpactSounds: []
+  playerDeathSound: {fileID: 0}
 --- !u!4 &595901095
 Transform:
   m_ObjectHideFlags: 0
@@ -957,7 +958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1039474286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,8 +974,10 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
   - {fileID: 5996440795664401264, guid: 43a34cb05d69b4a409055650b950c603, type: 3}
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  beetleSpawnTime: 5
+  beetleTimeReduction: 0.02
+  mantisTimeReduction: 0.03
+  mantisSpawnTime: 10
 --- !u!4 &1039474287
 Transform:
   m_ObjectHideFlags: 0
@@ -1310,6 +1313,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1724332708}
     - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
+      propertyPath: beetleDeathCountersText
+      value: 
+      objectReference: {fileID: 1624942020}
+    - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
+      propertyPath: mantisDeathCountersText
+      value: 
+      objectReference: {fileID: 1635094285}
+    - target: {fileID: 8427987154360840732, guid: 66e91b61cbdb07f46bba214179f58440, type: 3}
       propertyPath: enemyDeathCountersText.Array.data[0]
       value: 
       objectReference: {fileID: 1624942020}
@@ -1384,6 +1395,7 @@ MonoBehaviour:
   currentRotation: {x: 0, y: 0, z: 0}
   IsAttacking: 0
   isShooting: 0
+  isPaused: 0
 --- !u!50 &1366384611
 Rigidbody2D:
   serializedVersion: 4
@@ -1815,7 +1827,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 229512693d1fd0b40875ef5aeb109ece, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.208
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
