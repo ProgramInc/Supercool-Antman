@@ -25,7 +25,7 @@ public class MusicController : MonoBehaviour
 
     void Start()
     {
-        audioSource.volume = PlayerPrefs.GetFloat("Music Volume", 0.5f);
+        audioSource.volume = PlayerPrefs.GetFloat("Music Volume", 0.25f);
     }
 
     
