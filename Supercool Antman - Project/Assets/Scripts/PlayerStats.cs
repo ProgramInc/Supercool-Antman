@@ -43,7 +43,7 @@ public class PlayerStats : MonoBehaviour
         currentWeapon = PlayerWeaponTypes.Sword;
     }
 
-    private void Update()
+/*    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
         {
             ChangeEnergy(100f);
         }
-    }
+    }*/
 
     public void ChangeHealth(float value)
     {
