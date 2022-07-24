@@ -115,7 +115,7 @@ public class Mantis : MonoBehaviour
                     break;
                 }
                 AttackPlayer();
-                print(currentState);
+                /*print(currentState);*/
                 /*currentState = MantisStates.MoveToDestination;*/
                 break;
 

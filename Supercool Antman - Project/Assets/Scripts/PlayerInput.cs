@@ -153,7 +153,7 @@ public class PlayerInput : MonoBehaviour
         {
             RaycastHit2D[] hit = Physics2D.RaycastAll(groundRayCaster.transform.position, -transform.up * 2, 1.5f);
 
-            Debug.DrawRay(groundRayCaster.transform.position, -transform.up * 2, Color.red);
+            /*Debug.DrawRay(groundRayCaster.transform.position, -transform.up * 2, Color.red);*/
             foreach (RaycastHit2D raycastHit in hit)
             {
                 if (raycastHit.collider.CompareTag("FloorOrCeiling"))
