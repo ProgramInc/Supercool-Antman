@@ -296,9 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1784798617}
-  soundButton: {fileID: 343438155}
   quitButton: {fileID: 1222762556}
-  mouseOverSound: {fileID: 0}
+  mouseOverSound: {fileID: 8300000, guid: 88647eca1562c6b4b8b5680bf54cfaae, type: 3}
+  mouseClickSound: {fileID: 8300000, guid: 1b176183967aa6f41bdfdb6af909dfcf, type: 3}
 --- !u!4 &155518166
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 229512693d1fd0b40875ef5aeb109ece, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

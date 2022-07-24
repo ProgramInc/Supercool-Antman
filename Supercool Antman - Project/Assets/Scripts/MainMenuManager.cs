@@ -5,26 +5,33 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] Button playButton;
-    [SerializeField] Button soundButton;
     [SerializeField] Button quitButton;
 
     public AudioClip mouseOverSound;
+    public AudioClip mouseClickSound;
+/*    [SerializeField] Button soundButton;*/
 
     bool isSoundOn = true;
 
     private void OnEnable()
     {
         playButton.onClick.AddListener(PlayGame);
-        soundButton.onClick.AddListener(SoundToggle);
         quitButton.onClick.AddListener(QuitGame);
+/*        soundButton.onClick.AddListener(SoundToggle);*/
     }
     
     void PlayGame()
     {
         print("play game");
+
         SceneManager.LoadScene(1);
     }
 
+    void QuitGame()
+    {
+        Application.Quit();
+    }
+/*
     void SoundToggle()
     {
         if (isSoundOn)
@@ -37,10 +44,5 @@ public class MainMenuManager : MonoBehaviour
             isSoundOn = true;
             print("sound is on");
         }
-    }
-
-    void QuitGame()
-    {
-        Application.Quit();
-    }
+    }*/
 }

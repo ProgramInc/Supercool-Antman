@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     MainMenuManager mainMenuManager;
     Animator animator;
     AudioSource audioSource;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,5 +23,10 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         animator.SetBool("isMouseOnButton", true);
         audioSource.PlayOneShot(mainMenuManager.mouseOverSound);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        audioSource.PlayOneShot(mainMenuManager.mouseClickSound);
     }
 }
