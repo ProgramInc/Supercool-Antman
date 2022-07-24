@@ -73,7 +73,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 59789417ac1fa804e961eae6e84d0ef1, type: 3}
   lightSaberHit: []
   JumpSound:
-  - {fileID: 8300000, guid: fb352c3aaed7b6443af9a4566877d88a, type: 3}
+  - {fileID: 8300000, guid: 38c21f4c22d7d2f44b51d837a0d2bdf4, type: 3}
   landingSound:
   - {fileID: 8300000, guid: 5d14835ea61f0c1488effa16040e1057, type: 3}
   - {fileID: 8300000, guid: 29a65f1879dcd9d44933cba7ca23e05b, type: 3}

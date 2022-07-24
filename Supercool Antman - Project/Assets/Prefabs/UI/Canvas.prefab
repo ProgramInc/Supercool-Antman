@@ -1475,6 +1475,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5327561567065631286, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2392671823205713747}
     - target: {fileID: 6907251735350383779, guid: 3c5412e903daa414ba51367316ff8fcb, type: 3}
       propertyPath: m_Name
       value: Pause Menu Panel
