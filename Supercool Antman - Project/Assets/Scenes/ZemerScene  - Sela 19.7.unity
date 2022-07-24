@@ -801,10 +801,10 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
   - {fileID: 5996440795664401264, guid: 43a34cb05d69b4a409055650b950c603, type: 3}
-  beetleSpawnTime: 5
+  beetleSpawnTime: 2.5
   beetleTimeReduction: 0.02
   mantisTimeReduction: 0.03
-  mantisSpawnTime: 10
+  mantisSpawnTime: 5
 --- !u!4 &1039474287
 Transform:
   m_ObjectHideFlags: 0
@@ -1613,7 +1613,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
