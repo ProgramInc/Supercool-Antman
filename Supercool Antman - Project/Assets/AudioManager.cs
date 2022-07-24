@@ -101,18 +101,21 @@ public class AudioManager : MonoBehaviour
 
     void PlayLightSaberWhooshSound()
     {
-        audioSource.PlayOneShot(lightSaberSwoosh[Random.Range(0, lightSaberSwoosh.Length)]);
+        audioSource.clip = lightSaberSwoosh[Random.Range(0, lightSaberSwoosh.Length)];
+        audioSource.Play();
     }
 
     void PlaySwordHitSound(PlayerWeaponTypes weaponType)
     {
         if (weaponType == PlayerWeaponTypes.Sword)
         {
-            audioSource.PlayOneShot(swordHit[Random.Range(0, swordHit.Length)]);
+            audioSource.clip = swordHit[Random.Range(0, swordHit.Length)];
+            audioSource.Play();
         }
         else
         {
-            audioSource.PlayOneShot(lightSaberHit[Random.Range(0, lightSaberHit.Length)]);
+            audioSource.clip = lightSaberHit[Random.Range(0, lightSaberHit.Length)];
+            audioSource.Play();
         }
     }
 
