@@ -57,7 +57,7 @@ public class PlayerAnimatorController : MonoBehaviour
                 {
                     animator.SetTrigger("IsAttacking");
                     OnSwordSwoosh?.Invoke();
-                    print("invoked");
+                    /*print("invoked");*/
                     playerInput.IsAttacking = false;
                 }
                 else if (playerStats.currentWeapon == PlayerWeaponTypes.Lightsaber)
@@ -67,7 +67,7 @@ public class PlayerAnimatorController : MonoBehaviour
                     playerInput.IsAttacking = false;
                     if (playerStats.currentEnergy <= 0)
                     {
-                        print(playerStats.currentEnergy);
+                        /*print(playerStats.currentEnergy);*/
                         playerInput.ForceDrawSword();
                     }
                 }

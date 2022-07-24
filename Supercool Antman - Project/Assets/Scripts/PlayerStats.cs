@@ -43,7 +43,7 @@ public class PlayerStats : MonoBehaviour
         currentWeapon = PlayerWeaponTypes.Sword;
     }
 
-    private void Update()
+   /* private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
         {
             ChangeEnergy(10f);
         }
-    }
+    }*/
 
     public void ChangeHealth(float value)
     {
@@ -76,7 +76,7 @@ public class PlayerStats : MonoBehaviour
 
     private void PlayerDeath()
     {
-        print("you are dead");
+        /*print("you are dead");*/
         isAlive = false;
         Instantiate(playerDeathBloodSplatterPrefab, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
         GetComponentInParent<Light2D>().enabled = false;
