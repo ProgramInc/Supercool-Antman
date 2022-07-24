@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: weaponHitRadius
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 6810340912800079536, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 08340e2c659f18a4496620f8dea47256, type: 3}
     - target: {fileID: 7479937258957826339, guid: 2fb7ae3a7da3ff14fbf2968b3c38a23e, type: 3}
       propertyPath: m_Layer
       value: 9
