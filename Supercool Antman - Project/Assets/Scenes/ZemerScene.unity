@@ -1984,6 +1984,10 @@ PrefabInstance:
       propertyPath: reticle
       value: 
       objectReference: {fileID: 156397200}
+    - target: {fileID: 5550746310310897177, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
+      propertyPath: lazerSpeed
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5550746310779337648, guid: 4cef5d686e9cd8f43bf2502987426aca, type: 3}
       propertyPath: m_Name
       value: Player
