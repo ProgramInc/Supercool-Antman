@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip[] chewSounds;
     [SerializeField] AudioClip[] energyCollectedSounds;
     [SerializeField] AudioClip[] lazerImpactSounds;
+    [SerializeField] AudioClip playerDeathSound;
 
     public delegate void SwordImpactAction(PlayerWeaponTypes weaponType);
     public static SwordImpactAction OnSwordImpact;
@@ -32,6 +33,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
+        PlayerStats.OnPlayerDeath += PlayPlayerDeathSound;
         EnemyManager.OnBeetleDeath += PlayEnemyDeathSound;
         EnemyManager.OnMantisDeath += PlayEnemyDeathSound;
         PlayerStats.OnPlayerWasHit += PlayOuchSound;
@@ -50,6 +52,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
+        PlayerStats.OnPlayerDeath -= PlayPlayerDeathSound;
         EnemyManager.OnBeetleDeath -= PlayEnemyDeathSound;
         EnemyManager.OnMantisDeath -= PlayEnemyDeathSound;
         PlayerStats.OnPlayerWasHit -= PlayOuchSound;
@@ -66,6 +69,10 @@ public class AudioManager : MonoBehaviour
         OnSwordImpact -= PlaySwordHitSound;
     }
 
+    private void PlayPlayerDeathSound()
+    {
+        audioSource.PlayOneShot(playerDeathSound);
+    }
 
     void PlayEnemyDeathSound()
     {

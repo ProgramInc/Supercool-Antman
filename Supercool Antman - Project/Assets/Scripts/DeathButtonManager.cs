@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -11,6 +10,9 @@ public class DeathButtonManager : MonoBehaviour
     [SerializeField] Image menuImage;*/
     [SerializeField] Button restartButton;
     [SerializeField] Button menuButton;
+
+    public AudioClip mouseOverSound;
+    public AudioClip mouseClickSound;
 
     private void OnEnable()
     {

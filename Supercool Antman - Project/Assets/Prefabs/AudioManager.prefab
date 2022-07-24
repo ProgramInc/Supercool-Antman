@@ -87,6 +87,7 @@ MonoBehaviour:
   lazerImpactSounds:
   - {fileID: 8300000, guid: f57fade9b40f10546987565e0dcaf653, type: 3}
   - {fileID: 8300000, guid: 0f310040fa69e5a408a60b881c06f797, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: a0b4fbed688016142849658d543de9ec, type: 3}
 --- !u!82 &5673878714354931209
 AudioSource:
   m_ObjectHideFlags: 0
