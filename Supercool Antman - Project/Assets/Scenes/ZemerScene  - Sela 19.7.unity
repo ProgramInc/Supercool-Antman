@@ -801,8 +801,10 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1461389977373772192, guid: c742357ce35f8de41ab7254d0e8e85ec, type: 3}
   - {fileID: 5996440795664401264, guid: 43a34cb05d69b4a409055650b950c603, type: 3}
-  minSpawnTime: 0.5
-  maxSpawnTime: 1
+  beetleSpawnTime: 1
+  beetleTimeReduction: 0.02
+  mantisTimeReduction: 0.03
+  mantisSpawnTime: 10
 --- !u!4 &1039474287
 Transform:
   m_ObjectHideFlags: 0

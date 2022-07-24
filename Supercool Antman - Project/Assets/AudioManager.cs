@@ -81,7 +81,8 @@ public class AudioManager : MonoBehaviour
 
     void PlayLazerImpactSound()
     {
-        audioSource.PlayOneShot(lazerImpactSounds[Random.Range(0, lazerImpactSounds.Length)]);
+        audioSource.clip = lazerImpactSounds[Random.Range(0, lazerImpactSounds.Length)];
+        audioSource.Play();
     }
 
     void PlayOuchSound()
@@ -101,8 +102,7 @@ public class AudioManager : MonoBehaviour
 
     void PlayLightSaberWhooshSound()
     {
-        audioSource.clip = lightSaberSwoosh[Random.Range(0, lightSaberSwoosh.Length)];
-        audioSource.Play();
+        audioSource.PlayOneShot(lightSaberSwoosh[Random.Range(0, lightSaberSwoosh.Length)]);
     }
 
     void PlaySwordHitSound(PlayerWeaponTypes weaponType)
@@ -142,7 +142,4 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(energyCollectedSounds[Random.Range(0, energyCollectedSounds.Length)]);
     }
-
-
-
 }
