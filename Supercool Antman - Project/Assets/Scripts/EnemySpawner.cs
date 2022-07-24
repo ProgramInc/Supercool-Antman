@@ -6,10 +6,19 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]GameObject[] enemyPrefabs;
 
-    [SerializeField] float minSpawnTime;
-    [SerializeField] float maxSpawnTime;
+    /*[SerializeField] float minSpawnTime;
+    [SerializeField] float maxSpawnTime;*/
+    [SerializeField] float beetleSpawnTime;
+    float beetleSpawnTimer;
+    [SerializeField] float beetleTimeReduction;
+    [SerializeField] float mantisTimeReduction;
 
-    private float timeToNextSpawn;
+    [SerializeField] float mantisSpawnTime;
+    float mantisSpawnTimer;
+
+
+
+    /*private float beetleTimeToNextSpawn;*/
     private bool shouldSpawn = true;
     private GameManager gameManager;
     private Camera cam;
@@ -17,19 +26,26 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         PlayerStats.OnPlayerDeath += ShouldntSpawn;
+        EnemyManager.OnBeetleDeath += ReduceBeetleSpawnTime;
+        EnemyManager.OnMantisDeath += ReduceMantisSpawnTime;
     }
 
     private void onDisable()
     {
         PlayerStats.OnPlayerDeath -= ShouldntSpawn;
+        EnemyManager.OnBeetleDeath -= ReduceBeetleSpawnTime;
+        EnemyManager.OnMantisDeath -= ReduceMantisSpawnTime;
     }
 
     private void Awake()
     {
+        beetleSpawnTimer = beetleSpawnTime;
+        mantisSpawnTimer = mantisSpawnTime;
+
         gameManager = FindObjectOfType<GameManager>();
         cam = Camera.main;
 
-        ResetSpawnTime();
+        /*ResetSpawnTime();*/
     }
 
     private void ShouldntSpawn()
@@ -37,31 +53,66 @@ public class EnemySpawner : MonoBehaviour
         shouldSpawn = false;
     }
 
-    private void ResetSpawnTime()
+    /*private void ResetSpawnTime()
     {
-        timeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
-    }
+        beetleTimeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
+    }*/
 
     // Update is called once per frame
     void Update()
     {
-        timeToNextSpawn -= Time.deltaTime;
-        if (timeToNextSpawn <= 0)
+        /*beetleTimeToNextSpawn -= Time.deltaTime;*/
+        beetleSpawnTimer -= Time.deltaTime;
+        mantisSpawnTimer -= Time.deltaTime;
+
+        if (beetleSpawnTimer <= 0)
         {
             if (shouldSpawn)
             {
-                Spawn(); 
+                Spawn(0);
+                beetleSpawnTimer = beetleSpawnTime;
+            }
+        }
+        if (mantisSpawnTimer<= 0)
+        {
+            if (shouldSpawn)
+            {
+                Spawn(1);
+                mantisSpawnTimer = mantisSpawnTime;
             }
         }
     }
 
-    private void Spawn()
+    void ReduceMantisSpawnTime()
     {
-        FindSpawnPoint();
+        if (mantisSpawnTime >=0.1f)
+        {
+            mantisSpawnTime -= mantisTimeReduction;
+        }
+        else
+        {
+            mantisSpawnTime = 0.1f;
+        }
+    }
+    void ReduceBeetleSpawnTime()
+    {
+        if (beetleSpawnTime>= 0.1f)
+        {
+            beetleSpawnTime -= beetleTimeReduction;
+        }
+        else
+        {
+            beetleSpawnTime = 0.1f;
+        }
+    }
+
+    private void Spawn(int prefabNumber)
+    {
+        FindSpawnPoint(prefabNumber);
 
     }
 
-    private void FindSpawnPoint()
+    private void FindSpawnPoint(int prefabNumber)
     {
         float xSpawnPosition = Random.Range(gameManager.leftLimit.position.x, gameManager.rightLimit.position.x);
         float ySpawnPosition = Random.Range(gameManager.bottomLimit.position.y, gameManager.topLimit.position.y);
@@ -71,11 +122,11 @@ public class EnemySpawner : MonoBehaviour
         {
             if (raycastHit[i].collider.CompareTag("Player"))
             {
-                FindSpawnPoint();
+                FindSpawnPoint(prefabNumber);
                 break;
             }
         }
-        Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], testSpawnPoint, Quaternion.identity);
-        ResetSpawnTime();
+        Instantiate(enemyPrefabs[prefabNumber], testSpawnPoint, Quaternion.identity);
+        /*ResetSpawnTime();*/
     }
 }
